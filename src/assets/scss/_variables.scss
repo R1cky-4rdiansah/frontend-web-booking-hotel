@@ -12,10 +12,10 @@ $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
+$gray-600: #718096 !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+$gray-900: #1A202C !default;
 $black:    #000 !default;
 // scss-docs-end gray-color-variables
 
@@ -36,7 +36,7 @@ $grays: (
 // fusv-enable
 
 // scss-docs-start color-variables
-$blue:    #0d6efd !default;
+$blue:    #0A30B3 !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #d63384 !default;
@@ -299,6 +299,7 @@ $cyans: (
 
 // scss-docs-start theme-color-variables
 $primary:       $blue !default;
+$primary2:      #F79613 !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -317,7 +318,8 @@ $theme-colors: (
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  "dark":       $dark
+  "dark":       $dark,
+  "primary2":   $primary2
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -483,11 +485,11 @@ $paragraph-margin-bottom:   1rem !default;
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
   xs: 0,
-  sm: 576px,
+  sm: 640px,
   md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1536px
 ) !default;
 // scss-docs-end grid-breakpoints
 
@@ -1207,7 +1209,7 @@ $navbar-toggler-focus-width:        $btn-focus-width !default;
 $navbar-toggler-transition:         box-shadow .15s ease-in-out !default;
 
 $navbar-light-color:                rgba(var(--#{$prefix}emphasis-color-rgb), .65) !default;
-$navbar-light-hover-color:          rgba(var(--#{$prefix}emphasis-color-rgb), .8) !default;
+$navbar-light-hover-color:          #F79613 !default;
 $navbar-light-active-color:         rgba(var(--#{$prefix}emphasis-color-rgb), 1) !default;
 $navbar-light-disabled-color:       rgba(var(--#{$prefix}emphasis-color-rgb), .3) !default;
 $navbar-light-icon-color:           rgba($body-color, .75) !default;

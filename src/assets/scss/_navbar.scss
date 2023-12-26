@@ -73,7 +73,7 @@
 
   &:hover,
   &:focus {
-    color: var(--#{$prefix}navbar-brand-hover-color);
+    color: #F79613;
     text-decoration: if($link-hover-decoration == underline, none, null);
   }
 }
@@ -103,7 +103,7 @@
   .nav-link {
     &.active,
     &.show {
-      color: var(--#{$prefix}navbar-active-color);
+      color: #F79613;
     }
   }
 

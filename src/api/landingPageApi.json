@@ -1,0 +1,329 @@
+{
+      "hero": {
+            "traveler": 20000,
+            "kota": 120,
+            "keajaiban": 87
+      },
+      "most_picked": [
+            {
+                  "_id": "0ieieo8g7gqouh8eei29",
+                  "name": "Hotel Solo",
+                  "type": "Apartment",
+                  "image_url": "/assets/image/Image 1.jpg",
+                  "country": "Indonesia",
+                  "city": "Solo",
+                  "price": 200000,
+                  "unit": "malam"
+            },
+            {
+                  "_id": "0ieieo8g7gqouh8eei24",
+                  "name": "Hotel Yogya",
+                  "type": "Hotel",
+                  "image_url": "/assets/image/Image 2.jpg",
+                  "country": "Indonesia",
+                  "city": "Yogya",
+                  "price": 120000,
+                  "unit": "malam"
+            },
+            {
+                  "_id": "0ieieo8g7gqouh8e2i29",
+                  "name": "Hotel Bandung",
+                  "type": "Apartment",
+                  "image_url": "/assets/image/Image 3.jpg",
+                  "country": "Indonesia",
+                  "city": "Bandung",
+                  "price": 320000,
+                  "unit": "malam"
+            },
+            {
+                  "_id": "0ieieo8g34gqouh8eei29",
+                  "name": "Hotel Boyolali",
+                  "type": "Apartment",
+                  "image_url": "/assets/image/Image 4.jpg",
+                  "country": "Indonesia",
+                  "city": "Boyolali",
+                  "price": 420000,
+                  "unit": "malam"
+            },
+            {
+                  "_id": "0ieieo8g7gqouh8edff29",
+                  "name": "Hotel Kuta",
+                  "type": "Hotel",
+                  "image_url": "/assets/image/Image 5.jpg",
+                  "country": "Indonesia",
+                  "city": "Bali",
+                  "price": 620000,
+                  "unit": "malam"
+            }
+      ],
+      "category": [
+            {
+                  "_id": "93h4fugf39q7gf3",
+                  "name": "Rumah dengan halaman belakang",
+                  "items": [
+                        {
+                              "_id": "0iesdad8g7gqouh8edff29",
+                              "name": "Rumah Jowo",
+                              "image_url": "/assets/image/Rumah 1.jpg",
+                              "country": "Indonesia",
+                              "city": "Jawa Tengah",
+                              "price": 120000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                        {
+                              "_id": "0iesdad8g7asdauh8edff29",
+                              "name": "Rumah Bali",
+                              "image_url": "/assets/image/Rumah 2.jpg",
+                              "country": "Indonesia",
+                              "city": "Bali",
+                              "price": 220000,
+                              "unit": "malam",
+                              "populer": true
+                        },
+                        {
+                              "_id": "0iesdad8g43r34r34rh8edff29",
+                              "name": "Hotel Jogja",
+                              "image_url": "/assets/image/Rumah 3.jpg",
+                              "country": "Indonesia",
+                              "city": "Yogyakarta",
+                              "price": 520000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                        {
+                              "_id": "0iesdad8g7gqoppmpmdff29",
+                              "name": "Hotel Kandut",
+                              "image_url": "/assets/image/Rumah 4.jpg",
+                              "country": "Indonesia",
+                              "city": "Surakarta",
+                              "price": 420000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                        {
+                              "_id": "0iesdad8g7gqouaaaaassf29",
+                              "name": "Hotel Janji",
+                              "image_url": "/assets/image/Rumah 3.jpg",
+                              "country": "Indonesia",
+                              "city": "Sukoharjo",
+                              "price": 320000,
+                              "unit": "malam",
+                              "populer": true
+                        },
+                                                {
+                              "_id": "0iesdad8g43r34r34rh8edff29",
+                              "name": "Hotel Jogja",
+                              "image_url": "/assets/image/Rumah 2.jpg",
+                              "country": "Indonesia",
+                              "city": "Yogyakarta",
+                              "price": 520000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                        {
+                              "_id": "0iesdad8g7gqoppmpmdff29",
+                              "name": "Hotel Kandut",
+                              "image_url": "/assets/image/Rumah 4.jpg",
+                              "country": "Indonesia",
+                              "city": "Surakarta",
+                              "price": 420000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                                                {
+                              "_id": "0iesdad8g7gqoppmpmdff29",
+                              "name": "Hotel Kandut",
+                              "image_url": "/assets/image/Rumah 1.jpg",
+                              "country": "Indonesia",
+                              "city": "Surakarta",
+                              "price": 420000,
+                              "unit": "malam",
+                              "populer": false
+                        }
+                  ]
+            },
+            {
+                  "_id": "93h4fugf39q7gf3",
+                  "name": "Hotel dengan ruang keluarga",
+                  "items": [
+                        {
+                              "_id": "0iesdad8g7gqouh8edff29",
+                              "name": "Rumah Jowo",
+                              "image_url": "/assets/image/Family 1.jpg",
+                              "country": "Indonesia",
+                              "city": "Jawa Tengah",
+                              "price": 120000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                        {
+                              "_id": "0iesdad8g7asdauh8edff29",
+                              "name": "Rumah Bali",
+                              "image_url": "/assets/image/Family 2.jpg",
+                              "country": "Indonesia",
+                              "city": "Bali",
+                              "price": 220000,
+                              "unit": "malam",
+                              "populer": true
+                        },
+                        {
+                              "_id": "0iesdad8g43r34r34rh8edff29",
+                              "name": "Hotel Jogja",
+                              "image_url": "/assets/image/Family 3.jpg",
+                              "country": "Indonesia",
+                              "city": "Yogyakarta",
+                              "price": 520000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                        {
+                              "_id": "0iesdad8g7gqoppmpmdff29",
+                              "name": "Hotel Kandut",
+                              "image_url": "/assets/image/Family 4.jpg",
+                              "country": "Indonesia",
+                              "city": "Surakarta",
+                              "price": 420000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                        {
+                              "_id": "0iesdad8g7gqouaaaaassf29",
+                              "name": "Hotel Janji",
+                              "image_url": "/assets/image/Family 3.jpg",
+                              "country": "Indonesia",
+                              "city": "Sukoharjo",
+                              "price": 320000,
+                              "unit": "malam",
+                              "populer": true
+                        },
+                                                {
+                              "_id": "0iesdad8g43r34r34rh8edff29",
+                              "name": "Hotel Jogja",
+                              "image_url": "/assets/image/Family 2.jpg",
+                              "country": "Indonesia",
+                              "city": "Yogyakarta",
+                              "price": 520000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                        {
+                              "_id": "0iesdad8g7gqoppmpmdff29",
+                              "name": "Hotel Kandut",
+                              "image_url": "/assets/image/Family 4.jpg",
+                              "country": "Indonesia",
+                              "city": "Surakarta",
+                              "price": 420000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                                                {
+                              "_id": "0iesdad8g7gqoppmpmdff29",
+                              "name": "Hotel Kandut",
+                              "image_url": "/assets/image/Family 1.jpg",
+                              "country": "Indonesia",
+                              "city": "Surakarta",
+                              "price": 420000,
+                              "unit": "malam",
+                              "populer": false
+                        }
+                  ]
+            },
+            {
+                  "_id": "93h4fugf39q7gf3",
+                  "name": "Apartemen dengan ruang dapur",
+                  "items": [
+                        {
+                              "_id": "0iesdad8g7gqouh8edff29",
+                              "name": "Rumah Jowo",
+                              "image_url": "/assets/image/Apartemen 1.jpg",
+                              "country": "Indonesia",
+                              "city": "Jawa Tengah",
+                              "price": 120000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                        {
+                              "_id": "0iesdad8g7asdauh8edff29",
+                              "name": "Rumah Bali",
+                              "image_url": "/assets/image/Apartemen 2.jpg",
+                              "country": "Indonesia",
+                              "city": "Bali",
+                              "price": 220000,
+                              "unit": "malam",
+                              "populer": true
+                        },
+                        {
+                              "_id": "0iesdad8g43r34r34rh8edff29",
+                              "name": "Hotel Jogja",
+                              "image_url": "/assets/image/Apartemen 3.jpg",
+                              "country": "Indonesia",
+                              "city": "Yogyakarta",
+                              "price": 520000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                        {
+                              "_id": "0iesdad8g7gqoppmpmdff29",
+                              "name": "Hotel Kandut",
+                              "image_url": "/assets/image/Apartemen 4.jpg",
+                              "country": "Indonesia",
+                              "city": "Surakarta",
+                              "price": 420000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                        {
+                              "_id": "0iesdad8g7gqouaaaaassf29",
+                              "name": "Hotel Janji",
+                              "image_url": "/assets/image/Apartemen 3.jpg",
+                              "country": "Indonesia",
+                              "city": "Sukoharjo",
+                              "price": 320000,
+                              "unit": "malam",
+                              "populer": true
+                        },
+                                                {
+                              "_id": "0iesdad8g43r34r34rh8edff29",
+                              "name": "Hotel Jogja",
+                              "image_url": "/assets/image/Apartemen 2.jpg",
+                              "country": "Indonesia",
+                              "city": "Yogyakarta",
+                              "price": 520000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                        {
+                              "_id": "0iesdad8g7gqoppmpmdff29",
+                              "name": "Hotel Kandut",
+                              "image_url": "/assets/image/Apartemen 4.jpg",
+                              "country": "Indonesia",
+                              "city": "Surakarta",
+                              "price": 420000,
+                              "unit": "malam",
+                              "populer": false
+                        },
+                                                {
+                              "_id": "0iesdad8g7gqoppmpmdff29",
+                              "name": "Hotel Kandut",
+                              "image_url": "/assets/image/Apartemen 1.jpg",
+                              "country": "Indonesia",
+                              "city": "Surakarta",
+                              "price": 420000,
+                              "unit": "malam",
+                              "populer": false
+                        }
+                  ]
+            }
+      ],
+      "testimonial":
+      {
+            "_id": "0iesdad8g43r34r34rh8edff29",
+            "image_url":"/assets/image/Testimonial.jpg",
+            "name":"Happy Family",
+            "rate": 4.3,
+            "content": "Liburan yang sangat luar biasa dengan pemandangan yang memukau dan dan sangat natural. Kami sangat menikmati tempat disini dengan keyanaman yang sangat luar biasa.",
+            "nameFamily": "Ricky Ardiansah",
+            "familyJobs": "Full-Stack Web & Mobile Developer"
+      }
+}

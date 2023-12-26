@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+ul.navbar-nav {
+      li.nav-item {
+            .nav-link{                  
+                  @apply text-[16px] font-semibold;
+            }
+      }
+}
+
+p, span {
+      @apply leading-tight
+}
