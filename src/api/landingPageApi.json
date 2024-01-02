@@ -6,7 +6,7 @@
       },
       "most_picked": [
             {
-                  "_id": "0ieieo8g7gqouh8eei29",
+                  "_id": "0iesdad8g7gqouh8edff29",
                   "name": "Hotel Solo",
                   "type": "Apartment",
                   "image_url": "/assets/image/Image 1.jpg",
@@ -16,7 +16,7 @@
                   "unit": "malam"
             },
             {
-                  "_id": "0ieieo8g7gqouh8eei24",
+                  "_id": "0iesdad8g7gqouh8edff29",
                   "name": "Hotel Yogya",
                   "type": "Hotel",
                   "image_url": "/assets/image/Image 2.jpg",
@@ -26,7 +26,7 @@
                   "unit": "malam"
             },
             {
-                  "_id": "0ieieo8g7gqouh8e2i29",
+                  "_id": "0iesdad8g7gqouh8edff29",
                   "name": "Hotel Bandung",
                   "type": "Apartment",
                   "image_url": "/assets/image/Image 3.jpg",
@@ -36,7 +36,7 @@
                   "unit": "malam"
             },
             {
-                  "_id": "0ieieo8g34gqouh8eei29",
+                  "_id": "0iesdad8g7gqouh8edff29",
                   "name": "Hotel Boyolali",
                   "type": "Apartment",
                   "image_url": "/assets/image/Image 4.jpg",
@@ -46,7 +46,7 @@
                   "unit": "malam"
             },
             {
-                  "_id": "0ieieo8g7gqouh8edff29",
+                  "_id": "0iesdad8g7gqouh8edff29",
                   "name": "Hotel Kuta",
                   "type": "Hotel",
                   "image_url": "/assets/image/Image 5.jpg",
@@ -69,7 +69,8 @@
                               "city": "Jawa Tengah",
                               "price": 120000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasBackyard": true
                         },
                         {
                               "_id": "0iesdad8g7asdauh8edff29",
@@ -79,7 +80,8 @@
                               "city": "Bali",
                               "price": 220000,
                               "unit": "malam",
-                              "populer": true
+                              "populer": true,
+                              "hasBackyard": true
                         },
                         {
                               "_id": "0iesdad8g43r34r34rh8edff29",
@@ -89,7 +91,8 @@
                               "city": "Yogyakarta",
                               "price": 520000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasBackyard": true
                         },
                         {
                               "_id": "0iesdad8g7gqoppmpmdff29",
@@ -99,7 +102,8 @@
                               "city": "Surakarta",
                               "price": 420000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasBackyard": true
                         },
                         {
                               "_id": "0iesdad8g7gqouaaaaassf29",
@@ -109,7 +113,8 @@
                               "city": "Sukoharjo",
                               "price": 320000,
                               "unit": "malam",
-                              "populer": true
+                              "populer": true,
+                              "hasBackyard": true
                         },
                                                 {
                               "_id": "0iesdad8g43r34r34rh8edff29",
@@ -119,7 +124,8 @@
                               "city": "Yogyakarta",
                               "price": 520000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasBackyard": true
                         },
                         {
                               "_id": "0iesdad8g7gqoppmpmdff29",
@@ -129,7 +135,8 @@
                               "city": "Surakarta",
                               "price": 420000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasBackyard": true
                         },
                                                 {
                               "_id": "0iesdad8g7gqoppmpmdff29",
@@ -139,7 +146,8 @@
                               "city": "Surakarta",
                               "price": 420000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasBackyard": true
                         }
                   ]
             },
@@ -155,7 +163,8 @@
                               "city": "Jawa Tengah",
                               "price": 120000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasLivingRoom": true
                         },
                         {
                               "_id": "0iesdad8g7asdauh8edff29",
@@ -165,7 +174,8 @@
                               "city": "Bali",
                               "price": 220000,
                               "unit": "malam",
-                              "populer": true
+                              "populer": true,
+                              "hasLivingRoom": true
                         },
                         {
                               "_id": "0iesdad8g43r34r34rh8edff29",
@@ -175,7 +185,8 @@
                               "city": "Yogyakarta",
                               "price": 520000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasLivingRoom": true
                         },
                         {
                               "_id": "0iesdad8g7gqoppmpmdff29",
@@ -185,7 +196,8 @@
                               "city": "Surakarta",
                               "price": 420000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasLivingRoom": true
                         },
                         {
                               "_id": "0iesdad8g7gqouaaaaassf29",
@@ -195,7 +207,8 @@
                               "city": "Sukoharjo",
                               "price": 320000,
                               "unit": "malam",
-                              "populer": true
+                              "populer": true,
+                              "hasLivingRoom": true
                         },
                                                 {
                               "_id": "0iesdad8g43r34r34rh8edff29",
@@ -205,7 +218,8 @@
                               "city": "Yogyakarta",
                               "price": 520000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasLivingRoom": true
                         },
                         {
                               "_id": "0iesdad8g7gqoppmpmdff29",
@@ -215,7 +229,8 @@
                               "city": "Surakarta",
                               "price": 420000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasLivingRoom": true
                         },
                                                 {
                               "_id": "0iesdad8g7gqoppmpmdff29",
@@ -225,7 +240,8 @@
                               "city": "Surakarta",
                               "price": 420000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasLivingRoom": true
                         }
                   ]
             },
@@ -241,7 +257,8 @@
                               "city": "Jawa Tengah",
                               "price": 120000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasKitchen": true
                         },
                         {
                               "_id": "0iesdad8g7asdauh8edff29",
@@ -251,7 +268,8 @@
                               "city": "Bali",
                               "price": 220000,
                               "unit": "malam",
-                              "populer": true
+                              "populer": true,
+                              "hasKitchen": true
                         },
                         {
                               "_id": "0iesdad8g43r34r34rh8edff29",
@@ -261,7 +279,8 @@
                               "city": "Yogyakarta",
                               "price": 520000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasKitchen": true
                         },
                         {
                               "_id": "0iesdad8g7gqoppmpmdff29",
@@ -271,7 +290,8 @@
                               "city": "Surakarta",
                               "price": 420000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasKitchen": true
                         },
                         {
                               "_id": "0iesdad8g7gqouaaaaassf29",
@@ -281,7 +301,8 @@
                               "city": "Sukoharjo",
                               "price": 320000,
                               "unit": "malam",
-                              "populer": true
+                              "populer": true,
+                              "hasKitchen": true
                         },
                                                 {
                               "_id": "0iesdad8g43r34r34rh8edff29",
@@ -291,7 +312,8 @@
                               "city": "Yogyakarta",
                               "price": 520000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasKitchen": true
                         },
                         {
                               "_id": "0iesdad8g7gqoppmpmdff29",
@@ -301,7 +323,8 @@
                               "city": "Surakarta",
                               "price": 420000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasKitchen": true
                         },
                                                 {
                               "_id": "0iesdad8g7gqoppmpmdff29",
@@ -311,7 +334,8 @@
                               "city": "Surakarta",
                               "price": 420000,
                               "unit": "malam",
-                              "populer": false
+                              "populer": false,
+                              "hasKitchen": true
                         }
                   ]
             }
@@ -321,7 +345,7 @@
             "_id": "0iesdad8g43r34r34rh8edff29",
             "image_url":"/assets/image/Testimonial.jpg",
             "name":"Happy Family",
-            "rate": 4.3,
+            "rate": 4.375,
             "content": "Liburan yang sangat luar biasa dengan pemandangan yang memukau dan dan sangat natural. Kami sangat menikmati tempat disini dengan keyanaman yang sangat luar biasa.",
             "nameFamily": "Ricky Ardiansah",
             "familyJobs": "Full-Stack Web & Mobile Developer"

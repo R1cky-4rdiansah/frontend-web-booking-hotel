@@ -41,9 +41,8 @@ const MostPicked = ({ data, refMostpicked }) => {
               <div className="title-wrapper">
                 <Button
                   type="link"
-                  href={`details/${val._id}`}
+                  href={`/details/${val._id}`}
                   className="stretched-link d-block text-white text-left"
-                  onClick={() => alert("woke")}
                 >
                   <h5>{val.name}</h5>
                 </Button>

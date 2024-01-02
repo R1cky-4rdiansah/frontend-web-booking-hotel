@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <section className="bg-primary md:py-12 py-10 relative">
       <div className="footer-wrapper">
-        <div className="wrapper-text-about hidden">
+        <div className="wrapper-text-about">
           <h4 className="text-white about">Tentang Kami</h4>
           <p className="text-white">
             Kami memberikan tempat penginapan yang sesuai kebutuhan anda dengan
@@ -46,7 +46,7 @@ const Footer = () => {
             <figure>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="md:w-[25px] md:h-[25px] w-4 h-4"
+                className="md:w-[25px] md:h-[25px] w-4 h-4 ml-[0.5px]"
                 viewBox="0 0 25 25"
                 fill="none"
               >
@@ -106,7 +106,6 @@ const Footer = () => {
           </Button>
         </div>
         <div className="wrapper-subscribe hidden">
-          <p className="text-sub">Subscribe untuk informasi terbaru</p>
           <div className="group-input">
             <input
               type="email"

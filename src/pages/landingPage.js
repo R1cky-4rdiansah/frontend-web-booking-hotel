@@ -8,11 +8,18 @@ import MostPicked from "parts/MostPicked";
 import Category from "parts/Category";
 import Testimonial from "parts/Testimonial";
 import Footer from "parts/Footer";
-export default class landingPage extends Component {
+import withRouter from "./withRouter";
+class landingPage extends Component {
   constructor(props) {
     super(props);
     this.refMostpicked = React.createRef();
   }
+ 
+  componentDidMount() {
+    document.title = "Halan Halan | Home";
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <>
@@ -27,27 +34,9 @@ export default class landingPage extends Component {
           <Testimonial data={LandingPageApi.testimonial} />
           <Footer />
         </div>
-        {/* <Fullpage>
-          <FullpageNavigation />
-          <FullPageSections>
-            <FullpageSection>
-              <div className="h-screen overflow-y-auto">
-                <Header {...this.props}></Header>
-                <Hero data={LandingPageApi.hero} />
-              </div>
-            </FullpageSection>
-            <FullpageSection>
-              <MostPicked data={LandingPageApi.most_picked} />
-            </FullpageSection>
-            {/* <FullpageSection>
-              <h1>Screen 3</h1>
-            </FullpageSection>
-            <FullpageSection>
-              <h1>Screen 4</h1>
-            </FullpageSection>
-          </FullPageSections>
-        </Fullpage> */}
       </>
     );
   }
 }
+
+export default withRouter(landingPage);

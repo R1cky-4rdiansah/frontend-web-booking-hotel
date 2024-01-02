@@ -14,7 +14,6 @@ import Desa from "../assets/image/Desa.png"
 
 const Hero = ({ data, refMostpicked }) => {
   const showPage = () => {
-    console.log("woke");
     window.scrollTo({
       top: refMostpicked.current.offsetTop - 80,
       behavior: "smooth",

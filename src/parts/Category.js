@@ -58,7 +58,6 @@ const Category = ({ data }) => {
                     type="link"
                     href={`/details/${val._id}`}
                     className="text-price text-dark stretched-link"
-                    onClick={() => alert("woke")}
                   >
                     Rp {RupiahFormat(val.price)}
                   </Button>

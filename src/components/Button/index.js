@@ -32,6 +32,7 @@ export default function Button(props) {
   }
 
   if (props.type === "link") {
+    className.push("no-underline");
     if (props.isExternal) {
       return (
         <a
@@ -45,12 +46,16 @@ export default function Button(props) {
         </a>
       );
     } else {
-      <Link
-        to={props.href}
-        className={className.join(" ")}
-        style={props.style}
-        onClick={onClick}
-      ></Link>;
+      return (
+        <Link
+          to={props.href}
+          className={className.join(" ")}
+          style={props.style}
+          onClick={onClick}
+        >
+          {props.children}
+        </Link>
+      );
     }
   }
 

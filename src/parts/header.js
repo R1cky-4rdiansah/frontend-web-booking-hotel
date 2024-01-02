@@ -4,7 +4,7 @@ import Logo from "../assets/image/Logo_Halan2.png";
 
 export default function Header(props) {
   const getActiveClassLink = path => {
-    return window.location.pathname === path ? "active" : "";
+    return props.location.pathname === path ? "active" : "";
   };
 
   return (
@@ -33,7 +33,7 @@ export default function Header(props) {
                 <li className="nav-item">
                   <Button
                     type="link"
-                    href="#"
+                    href="/"
                     className={`nav-link ${getActiveClassLink("/")}`}
                   >
                     Home
@@ -42,7 +42,7 @@ export default function Header(props) {
                 <li className="nav-item">
                   <Button
                     type="link"
-                    href="#"
+                    href="/find"
                     className={`nav-link ${getActiveClassLink("/find")}`}
                   >
                     Find
@@ -51,7 +51,7 @@ export default function Header(props) {
                 <li className="nav-item">
                   <Button
                     type="link"
-                    href="#"
+                    href="/storie"
                     className={`nav-link ${getActiveClassLink("/storie")}`}
                   >
                     Storie
@@ -60,7 +60,7 @@ export default function Header(props) {
                 <li className="nav-item">
                   <Button
                     type="link"
-                    href="#"
+                    href="/agents"
                     className={`nav-link ${getActiveClassLink("/agents")}`}
                   >
                     Agents

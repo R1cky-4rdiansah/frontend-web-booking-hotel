@@ -1,0 +1,78 @@
+{
+      "0iesdad8g7gqouh8edff29": {
+            "_id": "0iesdad8g7gqouh8edff29",
+            "name": "Gajah Mungkur",
+            "type": "Hotel",
+            "image_url": [
+                  {
+                  "_id": "0iesdad8g7gqouh8edff29",
+                  "url": "/assets/image/Details 1.jpg"
+                  },
+                  {
+                  "_id": "0iesdad8g7gqouh8edff28",
+                  "url": "/assets/image/Details 2.jpg"
+                  },
+                  {
+                  "_id": "0iesdad8g7gqouh8edff27",
+                  "url": "/assets/image/Details 3.jpg"
+                  }
+            ],
+            "country": "Indonesia",
+            "city": "Sukoharjo",
+            "price": 120,
+            "unit": "malam",
+            "isPopular": true,
+            "hasBackyard": true,
+            "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,  when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of</p> <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Morel Ipsum.</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of</p>",
+            "feature": [
+                  {
+                        "_id": "123deddfjc3ic9493",
+                        "qty": 2,
+                        "name_icon": "Living Room",
+                        "url_icon": "/assets/icons/Icon Living Room.png"                        
+                  },
+                  {
+                        "_id": "123deddfjc3ic912313",
+                        "qty": 1,
+                        "name_icon": "Dining Room",
+                        "url_icon": "/assets/icons/Icon Dining Room.png"                        
+                  },
+                  {
+                        "_id": "123deddfjc3ic9495",
+                        "qty": 3,
+                        "name_icon": "Kitchen Room",
+                        "url_icon": "/assets/icons/Icon Cooking.png"                        
+                  },
+                  {
+                        "_id": "123deddfjc3ic9496",
+                        "qty": 1,
+                        "name_icon": "Bathroom",
+                        "url_icon": "/assets/icons/Icon Bathroom.png"                        
+                  },
+                  {
+                        "_id": "123deddfjc3ic9497",
+                        "qty": 10,
+                        "name_icon": "Mb/s",
+                        "url_icon": "/assets/icons/Icon Wifi.png"                        
+                  },
+                  {
+                        "_id": "123deddfjc3ic953252",
+                        "qty": 2,
+                        "name_icon": "Swimming Pool",
+                        "url_icon": "/assets/icons/Icon Swimming Pool.png"                        
+                  },
+                  {
+                        "_id": "123deddfjc3ic924324",
+                        "qty": 1,
+                        "name_icon": "Air Conditioning",
+                        "url_icon": "/assets/icons/Icon AC.png"                        
+                  },
+                  {
+                        "_id": "123deddfjc3ic545453",
+                        "qty": 1,
+                        "name_icon": "Television",
+                        "url_icon": "/assets/icons/Icon TV.png"                        
+                  }
+            ]
+      }
+}

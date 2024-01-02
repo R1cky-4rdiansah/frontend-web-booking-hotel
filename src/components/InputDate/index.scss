@@ -1,0 +1,22 @@
+.input-date{
+      .input-group-t{
+            @apply flex bg-white max-w-[280px] relative;
+
+            span.input-group-text-t{
+                  @apply pointer-events-none cursor-pointer p-3 inline-flex items-center border border-s-0 bg-white rounded-e;
+            }
+
+            .form-control-t{
+                  @apply block border flex-1 bg-white py-3 m-0 rounded-s border-e-0 text-center text-primary-dark;
+                  
+                  &:focus{
+                        @apply outline-none;
+                  }
+            }
+            
+            .date-range-wrapper{
+                  @apply rounded p-1 absolute left-0 right-0 top-full mt-2 bg-white z-10;
+            }
+
+      }
+}

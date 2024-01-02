@@ -1,7 +1,7 @@
 @import "mixins/banner";
 @include bsBanner("");
 
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700&display=swap');
 // scss-docs-start import-stack
 // Configuration
 @import "functions";
@@ -43,6 +43,10 @@
 @import "spinners";
 @import "offcanvas";
 @import "placeholders";
+
+body{
+  font-family: 'Roboto' !important;
+}
 
 // Helpers
 @import "helpers";
@@ -90,7 +94,7 @@
     @apply flex flex-col md:justify-start justify-center md:items-start items-center gap-2;
 
     span.text-icon{
-      @apply text-dark md:text-[16px] text-xs font-semibold;
+      @apply text-dark md:text-[16px] text-xs font-medium;
     }
   }
 }
@@ -113,11 +117,11 @@ section{
       @apply flex flex-col xl:order-last order-first lg:col-span-6 col-span-12 justify-end gap-2;
 
       h1{
-        @apply text-dark sm:leading-[62.5px] sm:font-semibold font-bold sm:text-[50px] sm:mb-[30px] mb-0 text-left text-xl;
+        @apply text-dark sm:leading-[62.5px] sm:font-medium font-bold sm:text-[50px] sm:mb-[30px] mb-0 text-left text-xl;
       }
 
       p{
-        @apply text-secondary block font-normal sm:text-[30px] sm:leading-8 text-base sm:mb-[80px] mb-2;
+        @apply text-secondary block font-light sm:text-[30px] sm:leading-8 text-base sm:mb-[80px] mb-2;
       }
     }
 
@@ -134,11 +138,11 @@ section{
       }
 
       p{
-        @apply md:text-primary-dark text-secondary-gray md:order-3 order-3 font-semibold md:text-[30px] md:leading-[37.5px] text-base w-full mb-0 md:mb-2;
+        @apply md:text-primary-dark text-secondary-gray md:order-3 order-3 font-medium md:text-[30px] md:leading-[37.5px] text-base w-full mb-0 md:mb-2;
       }
 
       span.text-user-testi{
-        @apply text-primary-dark md:text-secondary-gray md:order-4 order-first text-base md:font-normal font-semibold md:mb-12 mb-0;
+        @apply text-primary-dark md:text-secondary-gray md:order-4 order-first text-base font-normal md:mb-12 mb-0;
       }
     }
   }
@@ -180,11 +184,11 @@ section{
           @apply mt-3;
 
           h5{
-            @apply text-base leading-none font-semibold mb-1;
+            @apply text-base leading-none font-medium mb-1;
           }
 
           span{
-            @apply text-slate-200 text-xs leading-none font-semibold mb-1
+            @apply text-slate-200 text-xs leading-none font-medium mb-1
           }
         }
 
@@ -242,14 +246,14 @@ section{
     @apply sm:p-3 p-2 flex sm:flex-row flex-col sm:justify-between sm:items-center;
 
     .text-price{
-      @apply font-semibold sm:text-sm text-xs sm:order-first order-last sm:flex hidden;
+      @apply font-medium sm:text-sm text-xs sm:order-first order-last sm:flex hidden;
     }
 
     .text-location{
-      @apply flex sm:order-last order-first flex-col justify-end font-semibold text-sm;
+      @apply flex sm:order-last order-first flex-col justify-end font-medium text-sm;
 
       .name{
-        @apply font-semibold sm:text-base text-xs;
+        @apply font-medium sm:text-base text-xs;
       }
 
       .country{
@@ -287,11 +291,11 @@ section{
     @apply xl:flex hidden flex-col gap-2 w-[420px];
 
     .about{
-      @apply text-xl font-semibold;
+      @apply text-xl font-normal;
     }
 
     p{
-      @apply font-semibold text-sm;
+      @apply font-normal text-sm;
     }
   }
 
@@ -311,7 +315,7 @@ section{
     }
 
     .group-input{
-      @apply flex gap-4;
+      @apply flex gap-4 relative;
 
       input[type="email"]{
         @apply py-1 px-2 text-sm rounded-lg w-72 outline-none transition-all ease-in-out duration-75 border border-white font-semibold;
@@ -324,6 +328,11 @@ section{
       input[type="email"]:focus{
         @apply border-primary-orange;
       }
+
+      &::after{        
+        @apply absolute top-0 left-0 -mt-8 text-white font-semibold text-xs;
+        content: "Subscribe untuk informasi terbaru";
+      }
     }
   }
 
@@ -331,7 +340,147 @@ section{
     @apply absolute bottom-0 left-0 right-0 h-4 flex justify-center items-center;
     
     span{
-      @apply text-xs text-white font-semibold mb-1;
+      @apply text-xs text-white font-light mb-1;
+    }
+  }
+}
+
+.wrapper-top-details{
+  @apply flex flex-col gap-4;
+
+  .header-title{
+    @apply grid grid-cols-12 grid-rows-1 items-center;
+
+    .wrapper-breadcumb{
+      @apply col-span-4 flex items-center justify-start;
+  
+      nav{
+        @apply flex;
+  
+        ol{
+          @apply inline-flex m-0 p-0 items-center space-x-2;
+  
+          li{
+            .content{
+              @apply flex items-center;
+  
+              .breadcumb-text{
+                @apply text-lg font-normal;
+  
+                &:not(.active){
+                  @apply text-secondary-gray
+                }
+  
+                &.active{
+                  @apply text-primary-dark;
+                }
+              }
+
+              &.divider::before{
+                @apply pr-[6px];
+                content: '/'
+                
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .wrapper-title-details{
+      @apply col-span-4 flex flex-col justify-center items-center gap-2;
+  
+      h2{
+        @apply text-primary-dark font-medium m-0;
+      }
+  
+      h4{
+        @apply text-secondary-gray font-normal m-0;
+      }
+    }
+  }
+
+  .header-image{
+    @apply grid grid-cols-12 md:auto-rows-[minmax(200px,250px)] grid-flow-dense relative md:gap-6 gap-2;
+
+    .item-image{
+      @apply w-full h-full rounded-lg;
+    }
+  }
+}
+
+.details-grid{
+  @apply grid grid-cols-12 gap-6 relative mt-3;
+
+  .text-wrapper-details{
+  @apply col-span-7;
+
+    h6 {
+      @apply font-semibold text-primary-dark;
+    }
+
+    .detail-teks{
+    p{
+        @apply font-normal text-secondary-gray text-sm mb-2;
+      }
+    }
+
+    .grid-icon{
+      @apply grid grid-cols-7 gap-6 relative;
+
+      .item-icon-start{
+        @apply col-span-2;
+
+        .icon-wrapper{
+          @apply flex flex-col justify-start gap-2;
+
+          img{
+            @apply w-7 h-7 object-cover;
+          }
+
+          p.text-icon{
+            @apply text-secondary-gray text-xs font-normal
+          }
+        }
+      }
+
+      .item-icon-end{
+        @apply col-span-1;
+
+          .icon-wrapper{
+          @apply flex flex-col justify-start gap-2;
+
+          img{
+            @apply w-8 h-8 object-cover;
+          }
+
+          p.text-icon{
+            @apply text-secondary-gray text-xs font-normal
+          }
+        }
+      }
+    }
+  }
+
+  .pay-transaction{
+    @apply col-span-5 flex justify-center;
+
+    .wrapper-pay{
+      @apply shadow-[0_0_2px_0_rgba(0,0,0,0.20)] px-24 py-12 rounded-2xl flex flex-col gap-2 h-fit w-full;
+
+      h3{
+        .text-price{
+          @apply text-4xl text-prmary-blue font-medium;
+        }
+      }
+    }
+
+    .wrapper-input{
+      @apply flex flex-col gap-1;
+    }
+
+    .total-price{
+      @apply text-base m-0 text-secondary-gray font-medium;
     }
   }
 }
