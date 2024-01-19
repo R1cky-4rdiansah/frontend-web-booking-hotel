@@ -591,7 +591,7 @@ section{
 }
 
 .payment-main-container{
-  @apply grid grid-cols-2 lg:gap-0 gap-3 justify-center items-center;
+  @apply grid grid-cols-2 lg:gap-0 gap-6 justify-center items-center;
 
   .content-payment-left{
     @apply col-span-2 lg:col-span-1 h-full flex flex-col lg:pr-10 lg:py-5 p-0 lg:border-r lg:border-secondary-gray gap-6;
@@ -600,7 +600,7 @@ section{
       @apply flex flex-col gap-2;
 
       table{
-        @apply border-none ml-4;
+        @apply border-none md:ml-4 ml-2;
       }
     }
 
@@ -608,10 +608,10 @@ section{
       @apply flex flex-col gap-2;
 
       .payment-card{
-        @apply flex lg:flex-col md:flex-row flex-col gap-4 ml-4;
+        @apply flex lg:flex-col md:flex-row flex-col gap-4 md:ml-4 ml-2;
 
         .item-card{
-          @apply flex items-center gap-4;
+          @apply flex items-center md:gap-4 gap-2;
 
           figure{
             @apply border border-secondary-gray rounded-lg m-0 max-w-[310px] max-h-[150px] overflow-hidden px-4 py-1;
@@ -637,7 +637,7 @@ section{
     }
 
     .rows{
-      @apply grid grid-cols-3 lg:gap-10 gap-3 lg:ml-0 ml-4;
+      @apply grid grid-cols-3 lg:gap-10 gap-3 lg:ml-0 md:ml-4 ml-2;
 
       .konten-input{
         @apply lg:col-span-3 md:col-span-1 col-span-3;

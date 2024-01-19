@@ -26,35 +26,41 @@ export default function Payment({
               Ringkasan Pemesanan :
             </h5>
             <table>
-              <tr>
-                <td className="text-sm text-secondary-gray w-full">
-                  Sub Total
-                </td>
-                <td className="text-sm text-primary-dark text-end pr-1">Rp</td>
-                <td className="text-sm text-primary-dark text-end">
-                  {RupiahFormat(itemDetails.price * 1000)}
-                </td>
-              </tr>
-              <tr>
-                <td className="text-sm text-secondary-gray ">
-                  Pajak PPN {pajak}%
-                </td>
-                <td className="text-sm text-primary-dark text-end pr-1">Rp</td>
-                <td className="text-sm text-primary-dark text-end">
-                  {RupiahFormat(nilaiPajak * 1000)}
-                </td>
-              </tr>
-              <tr>
-                <td className="text-sm text-secondary-gray font-semibold">
-                  Total
-                </td>
-                <td className="text-sm text-primary-dark text-end font-semibold pr-1">
-                  Rp
-                </td>
-                <td className="text-sm text-primary-dark text-end font-bold">
-                  {RupiahFormat(total)}
-                </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td className="text-sm text-secondary-gray w-full">
+                    Sub Total
+                  </td>
+                  <td className="text-sm text-primary-dark text-end pr-1">
+                    Rp
+                  </td>
+                  <td className="text-sm text-primary-dark text-end">
+                    {RupiahFormat(itemDetails.price * 1000)}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="text-sm text-secondary-gray ">
+                    Pajak PPN {pajak}%
+                  </td>
+                  <td className="text-sm text-primary-dark text-end pr-1">
+                    Rp
+                  </td>
+                  <td className="text-sm text-primary-dark text-end">
+                    {RupiahFormat(nilaiPajak * 1000)}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="text-sm text-secondary-gray font-semibold">
+                    Total
+                  </td>
+                  <td className="text-sm text-primary-dark text-end font-semibold pr-1">
+                    Rp
+                  </td>
+                  <td className="text-sm text-primary-dark text-end font-bold">
+                    {RupiahFormat(total)}
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <div id="transfer_pembayaran" className="transfer-pembayaran">
@@ -94,9 +100,7 @@ export default function Payment({
           </div>
         </div>
         <div className="content-payment-right">
-          <h5>
-            Form Pembayaran :
-          </h5>
+          <h5>Form Pembayaran :</h5>
           <div className="rows">
             <div className="konten-input">
               <label htmlFor="proofPayment">Upload Bukti Pembayaran</label>
@@ -104,7 +108,6 @@ export default function Payment({
                 accept="image/*"
                 name="proofPayment"
                 id="proofPayment"
-                value={data.proofPayment}
                 propsOnChange={propsOnChange}
               />
             </div>

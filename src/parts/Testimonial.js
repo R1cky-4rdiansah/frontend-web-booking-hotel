@@ -34,7 +34,7 @@ const Testimonial = ({data}) => {
               className="inline md:hidden text-secondary font-semibold text-base"
               onClick={() => setTruncate(!onTruncate)}
             >
-              {onTruncate ? "Read More" : "Show Little"}
+              {onTruncate ? " Read More" : " Show Little"}
             </Button>
           </p>
           <span className=" text-user-testi">
@@ -47,7 +47,7 @@ const Testimonial = ({data}) => {
             onClick={() => setTruncate(!onTruncate)}
           >
             <span className="font-semibold text-[20px] text-white">
-              {onTruncate ? "Read More" : "Show Little"}
+              {onTruncate ? " Read More" : " Show Little"}
             </span>
           </Button>
         </div>

@@ -15,17 +15,20 @@ import itemDetails from "../api/detailPageApi.json";
 import withRouter from "./withRouter";
 
 class checkOut extends Component {
-  state = {
-    data: {
-      firstname: "",
-      lastname: "",
-      email: "",
-      phone: "",
-      proofPayment: "",
-      bankName: "",
-      bankHolder: "",
-    },
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {
+        firstname: "",
+        lastname: "",
+        email: "",
+        phone: "",
+        proofPayment: undefined,
+        bankName: "",
+        bankHolder: "",
+      },
+    };
+  }
 
   onChange = (e) => {
     this.setState({
@@ -36,17 +39,9 @@ class checkOut extends Component {
     });
   };
 
-  onChangeFile = (e) => {
-    this.setState({
-      data: {
-        ...this.state.data,
-        [e.target.name]: e.target.files[0],
-      },
-    });
-  };
-
   componentDidMount() {
     window.scroll(0, 0);
+    document.title = "Halan Halan | Payment";
   }
 
   render() {
@@ -54,7 +49,6 @@ class checkOut extends Component {
     const checkout = {
       duration: this.props.params.duration,
     };
-    console.log(data);
     const steps = {
       bookingInformation: {
         title: "Informasi Pesanan",
@@ -77,7 +71,6 @@ class checkOut extends Component {
             checkOut={checkout}
             itemDetails={itemDetails}
             propsOnChange={this.onChange}
-            propsOnChangeFile={this.onChangeFile}
           />
         ),
       },
@@ -133,16 +126,16 @@ class checkOut extends Component {
                   >
                     Kembali
                   </Button>
-                  {(data.bankHolder && data.bankName && data.proofPayment) !==
-                    "" && (
-                    <Button
-                      className="btn-booking-next"
-                      type="button"
-                      onClick={nextStep}
-                    >
-                      Lanjutkan
-                    </Button>
-                  )}
+                  {(data.bankHolder && data.bankName) !== "" &&
+                    data.proofPayment !== undefined && (
+                      <Button
+                        className="btn-booking-next"
+                        type="button"
+                        onClick={nextStep}
+                      >
+                        Lanjutkan
+                      </Button>
+                    )}
                 </Controller>
               )}
 
