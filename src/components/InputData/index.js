@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.scss";
 import propTypes from "prop-types";
 
@@ -15,26 +15,24 @@ export default function InputData({
   setMaxDateprops,
   maxDateProps,
 }) {
-  const [inputValue, setInputValue] = useState(`${prefix}${value}${suffix}`);
 
   const onChange = (e) => {
     let value = String(e.target.value);
 
     //Menghilangkan nilai dengan preffix atau suffix agar nilai tetap terbaca number (nilai)
-    if (prefix) value = value.replace(prefix);
-    if (suffix) value = value.replace(suffix);
+    // if (prefix) value = value.replace(prefix);
+    // if (suffix) value = value.replace(suffix);
 
-    const patternNumber = new RegExp("[0-9]*");
-    const isNumber = patternNumber.test(value);
+    // const patternNumber = new RegExp("[0-9]*");
+    // const isNumber = patternNumber.test(value);
 
-    if (isNumber && Number(value) <= max && Number(value) >= min) {
+    if (Number(value) <= max && Number(value) >= min) {
       onChangeProps({
         target: {
           name: name,
           value: Number(value),
         },
       });
-      setInputValue(`${prefix}${value}${suffix}`);
     }
   };
 
@@ -70,10 +68,11 @@ export default function InputData({
           min={min}
           max={max}
           name={name}
+          readOnly
           pattern="[0-9]*"
           className="form-control-t"
           placeholder={placheholder ? placheholder : "0"}
-          value={String(inputValue)}
+          value={`${prefix}${value}${suffix}`}
           onChange={onChange}
         />
         <span onClick={plus} className="input-group-text-t plus">

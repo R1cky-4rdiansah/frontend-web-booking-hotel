@@ -16,7 +16,7 @@ export default function InputDate({
   name,
   onChangeProps,
   className,
-  max
+  min
 }) {
   const [show, setShow] = useState(false);
 
@@ -64,7 +64,7 @@ export default function InputDate({
               moveRangeOnFirstSelection={false}
               onRangeFocusChange={check}
               ranges={[value]}
-              maxDate={max}
+              minDate={min}
             />
           </div>
         )}

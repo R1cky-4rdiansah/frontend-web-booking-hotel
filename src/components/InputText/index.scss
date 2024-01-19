@@ -1,0 +1,35 @@
+.input-text{
+      @apply relative flex flex-col gap-1;
+      .input-group-t{
+            @apply bg-white flex gap-2 md:max-w-[400px] w-full relative;
+
+            .input-group-text-t{
+                  @apply text-[20px] flex w-10 justify-center items-center pointer-events-none cursor-auto border-transparent border-0 text-white rounded;
+                  user-select: none;
+      
+                  &.minus{
+                  @apply bg-[#F43F5E];
+                  }
+      
+                  &.plus{
+                        @apply bg-[#14B8A6];
+                  }
+            }
+      
+            input.form-control-t{
+                  @apply flex-1 border px-1 py-3 text-sm bg-white text-center rounded text-primary-dark;      
+                  
+                  &:focus{
+                       @apply outline-none;
+                  }
+
+                  &::placeholder{
+                        @apply text-secondary-gray;
+                  }
+            }
+      }
+
+      .error-helper{
+            @apply p-2 bg-red-600 text-white rounded-lg text-sm w-fit;
+      }
+}

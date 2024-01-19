@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Tesimonial from "../assets/image/Testimonial.jpg";
 import Button from "components/Button";
-import Rating from "../utils/BintangTestimonial";
 import Bintang from "components/Bintang";
 
 const Testimonial = ({data}) => {
@@ -13,7 +11,7 @@ const Testimonial = ({data}) => {
   };
 
   return (
-    <section className="mb-2">
+    <section>
       <h4 className="tag-category text-secondary mb-3 md:hidden visible">
         Testimonial
       </h4>

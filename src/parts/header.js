@@ -3,9 +3,27 @@ import React from "react";
 import Logo from "../assets/image/Logo_Halan2.png";
 
 export default function Header(props) {
-  const getActiveClassLink = path => {
+  const getActiveClassLink = (path) => {
     return props.location.pathname === path ? "active" : "";
   };
+
+  if (props.isPayment) {
+    return (
+      <header>
+        <div className="container-fluid m-0 p-0 shadow-navbar fixed top-0 z-50">
+          <nav className="navbar navbar-expand-lg bg-white lg:mx-[80px] md:mx-[40px] my-1 p-0">
+            <div className="container-fluid m-0 p-0">
+              <img
+                src={Logo}
+                alt="Logo Halan2"
+                className="object-contain w-[110px] mx-auto h-[30]"
+              />
+            </div>
+          </nav>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header>

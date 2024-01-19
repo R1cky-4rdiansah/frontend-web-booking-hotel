@@ -1,6 +1,7 @@
 .input-date{
+
       .input-group-t{
-            @apply flex bg-white max-w-[280px] relative;
+            @apply flex bg-white md:max-w-[280px] w-full relative;
 
             span.input-group-text-t{
                   @apply pointer-events-none cursor-pointer p-3 inline-flex items-center border border-s-0 bg-white rounded-e;

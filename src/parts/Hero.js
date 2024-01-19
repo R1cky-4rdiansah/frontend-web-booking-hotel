@@ -32,7 +32,9 @@ const Hero = ({ data, refMostpicked }) => {
     <section className="mt-[80px]">
       <div className="banner-grid">
         <div className="image-banner">
-          <figure className="banner-image mb-0">
+          <figure className="banner-image mb-0 relative">
+            <div className="top-0 left-0 right-0 bottom-0 bg-transparent z-10 absolute">
+            </div>
             <ReactOwlCarousel
               className="owl-theme"
               loop
@@ -42,6 +44,8 @@ const Hero = ({ data, refMostpicked }) => {
               autoplayTimeout={5000}
               autoplayHoverPause={true}
               animateOut="fadeOut"
+              touchDrag="false"
+              mouseDrag="false"
               {...responsive}
             >
               <img

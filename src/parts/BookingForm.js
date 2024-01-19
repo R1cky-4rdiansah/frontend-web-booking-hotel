@@ -63,7 +63,6 @@ export default class BookingForm extends Component {
   render() {
     const { data } = this.state;
     const { itemDetails, startBooking } = this.props;
-    console.log(data);
     return (
       <div className="wrapper-pay">
         <h5 className="text-secondary-gray font-medium m-0">
@@ -74,7 +73,7 @@ export default class BookingForm extends Component {
           {itemDetails.unit}
         </h3>
         <div className="wrapper-input">
-          <span className="text-xs text-primary-dark font-medium">
+          <span className="text-xs text-primary-dark font-medium w-fit">
             Berapa lama kamu tinggal?
           </span>
           <InputData
@@ -86,13 +85,14 @@ export default class BookingForm extends Component {
           />
         </div>
         <div className="wrapper-input">
-          <span className="text-xs text-primary-dark font-medium">
+          <span className="text-xs text-primary-dark font-medium w-fit">
             Tanggal berapa saja?
           </span>
           <InputDate
             onChangeProps={this.updateData}
             name="date"
             value={data.date}
+            min={new Date()}
           />
         </div>
         <p className="total-price">
@@ -107,9 +107,10 @@ export default class BookingForm extends Component {
           </span>
         </p>
         <Button
-          type="button"
+          type="link"
+          href={`/payment/${data.duration}`}
           isPrimaryBg
-          className="py-3 text-white text-xl font-semibold rounded-lg mt-10 shadow-primary max-w-[280px]"
+          className="py-3 text-white flex justify-center text-xl font-semibold rounded-lg mt-10 shadow-primary md:max-w-[280px] w-full"
         >
           Lanjutkan
         </Button>

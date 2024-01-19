@@ -1,6 +1,7 @@
 .input-number{
+
       .input-group-t{
-            @apply bg-white flex gap-2 max-w-[280px];
+            @apply bg-white flex gap-2 md:max-w-[280px] w-full;
 
             .input-group-text-t{
                   @apply text-[20px] flex w-10 justify-center items-center cursor-pointer border-transparent border-0 text-white rounded;
