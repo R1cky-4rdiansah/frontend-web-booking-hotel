@@ -3,8 +3,9 @@ import propTypes from "prop-types";
 import InputData from "components/InputData";
 import InputDate from "components/InputDate";
 import Button from "components/Button";
+import withRouter from "pages/withRouter";
 
-export default class BookingForm extends Component {
+class BookingForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -60,6 +61,19 @@ export default class BookingForm extends Component {
     }
   }
 
+  startBooking = () => {
+    const { data } = this.state;
+    this.props.startBooking({
+      _id: this.props.itemDetails._id,
+      duration: data.duration,
+      date: {
+        startDate: data.date.startDate,
+        endDate: data.date.endDate,
+      },
+    });
+    this.props.navigate("/payment");
+  };
+
   render() {
     const { data } = this.state;
     const { itemDetails, startBooking } = this.props;
@@ -69,7 +83,7 @@ export default class BookingForm extends Component {
           Tempat Pemesanan
         </h5>
         <h3 className="text-secondary-gray font-medium m-0">
-          Mulai dari <span className="text-price">{itemDetails.price}K</span> /
+          Mulai dari <span className="text-price">{itemDetails.price / 1000}K</span> /
           {itemDetails.unit}
         </h3>
         <div className="wrapper-input">
@@ -98,7 +112,7 @@ export default class BookingForm extends Component {
         <p className="total-price">
           Kamu akan membayar{" "}
           <span className="text-prmary-blue">
-            {itemDetails.price * data.duration}K
+            {itemDetails.price * data.duration / 1000}K
           </span>{" "}
           per{" "}
           <span className="text-prmary-blue">
@@ -107,8 +121,9 @@ export default class BookingForm extends Component {
           </span>
         </p>
         <Button
-          type="link"
-          href={`/payment/${data.duration}`}
+          type="button"
+          // href={`/payment/${data.duration}`}
+          onClick={this.startBooking}
           isPrimaryBg
           className="py-3 text-white flex justify-center text-xl font-semibold rounded-lg mt-10 shadow-primary md:max-w-[280px] w-full"
         >
@@ -122,3 +137,5 @@ export default class BookingForm extends Component {
 BookingForm.propTypes = {
   startBooking: propTypes.func,
 };
+
+export default withRouter(BookingForm);

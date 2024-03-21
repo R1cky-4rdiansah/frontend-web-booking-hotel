@@ -14,6 +14,7 @@ export default function InputText({
   append,
   prepend,
   propsOnChange,
+  secure
 }) {
   const [hasError, setHasError] = useState(null);
   let pattern = "";
@@ -50,9 +51,10 @@ export default function InputText({
           pattern={pattern}
           placeholder={placeholder}
           onChange={onChange}
-          className={["form-control-t", inputClassname].join(" ")}
+          className={["form-control-t relative", inputClassname].join(" ")}
         />
         {append && <span className="input-group-text-t">{append}</span>}
+        {secure && <button className="input-group-button">{secure}</button>}
       </div>
       {hasError && <span className="error-helper">{hasError}</span>}
     </div>

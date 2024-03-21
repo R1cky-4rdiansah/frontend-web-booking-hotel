@@ -8,7 +8,13 @@ const MostPicked = ({ data, refMostpicked }) => {
     <section ref={refMostpicked}>
       <h4 className="tag-category text-secondary mb-3">Sering Dipesan</h4>
       <div className="grid-card-image">
-        {data.map((val, i) => (
+        {data.length === 0 ? (
+          <div className="flex justify-center items-center">
+            <h1 className="text-primary-dark">
+              Maaf ya, datannya belum ada nih...
+            </h1>
+          </div>
+        ) :  data.map((val, i) => (
           <div
             key={i}
             className={`item ${
@@ -33,7 +39,7 @@ const MostPicked = ({ data, refMostpicked }) => {
               )}
               <figure className="wrapper-image">
                 <img
-                  src={val.image_url}
+                  src={`${process.env.REACT_APP_BACKEND}/${val.image_url}`}
                   alt={val.name}
                   className="object-cover h-full w-full"
                 />

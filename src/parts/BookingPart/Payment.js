@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Logo_Mandiri from "../../assets/logo/Logo Bank Mandiri.png";
 import Logo_Jateng from "../../assets/logo/Logo Bank Jateng.png";
 import RupiahFormat from "utils/RupiahFormat";
 import InputFile from "components/InputFile";
 import InputText from "components/InputText";
+import SelectOption from "components/SelectOption";
 
 export default function Payment({
   data,
@@ -12,10 +13,10 @@ export default function Payment({
   checkOut,
   propsOnChange,
 }) {
-  const pajak = 10;
-  const nilaiPajak = (itemDetails.price * pajak) / 100;
-  const subTotal = itemDetails.price * checkOut.duration * 1000;
-  const total = subTotal + (subTotal * pajak) / 100;
+  const pajak = 0.1;
+  const subTotal = itemDetails.price * checkOut.duration;
+  const nilaiPajak = subTotal * pajak;
+  const total = subTotal + subTotal * pajak;
 
   return (
     <section className="my-4 gap-6">
@@ -35,18 +36,18 @@ export default function Payment({
                     Rp
                   </td>
                   <td className="text-sm text-primary-dark text-end">
-                    {RupiahFormat(itemDetails.price * 1000)}
+                    {RupiahFormat(subTotal)}
                   </td>
                 </tr>
                 <tr>
                   <td className="text-sm text-secondary-gray ">
-                    Pajak PPN {pajak}%
+                    Pajak PPN {pajak * 100}%
                   </td>
                   <td className="text-sm text-primary-dark text-end pr-1">
                     Rp
                   </td>
                   <td className="text-sm text-primary-dark text-end">
-                    {RupiahFormat(nilaiPajak * 1000)}
+                    {RupiahFormat(nilaiPajak)}
                   </td>
                 </tr>
                 <tr>
@@ -68,34 +69,22 @@ export default function Payment({
               Transfer Pembayaran :
             </h5>
             <div className="payment-card">
-              <div className="item-card">
-                <figure>
-                  <img
-                    src={Logo_Mandiri}
-                    alt="logo_bank_mandiri"
-                    className="object-cover"
-                  />
-                </figure>
-                <div className="wrapper-text-detail">
-                  <h5>Bank Mandiri</h5>
-                  <h5>1234 567 8910 1234</h5>
-                  <h5>Ricky Ardiansah</h5>
+              {itemDetails.bank.map((val, i) => (
+                <div key={i} className="item-card">
+                  <figure>
+                    <img
+                      src={`${process.env.REACT_APP_BACKEND}/${val.imageUrl}`}
+                      alt={val.imageUrl}
+                      className="object-cover"
+                    />
+                  </figure>
+                  <div className="wrapper-text-detail">
+                    <h5>{val.nameBank}</h5>
+                    <h5>{val.noRekening}</h5>
+                    <h5>{val.name}</h5>
+                  </div>
                 </div>
-              </div>
-              <div className="item-card">
-                <figure>
-                  <img
-                    src={Logo_Jateng}
-                    alt="logo_bank_jateng"
-                    className="object-cover"
-                  />
-                </figure>
-                <div className="wrapper-text-detail">
-                  <h5>Bank Jateng</h5>
-                  <h5>1234 567 8910 1234</h5>
-                  <h5>Ricky Ardiansah</h5>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

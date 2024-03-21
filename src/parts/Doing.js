@@ -37,22 +37,30 @@ const Doing = ({ data }) => {
         autoplayHoverPause={true}
         {...responsive}
       >
-        {data?.map((val, i) => (
-          <div key={i} className="item-doing">
-            <div className="card-image card-fitur">
-              <figure className="wrapper-image">
-                <img
-                  src={val.image_url}
-                  alt={val.name}
-                  className="object-cover h-full w-full"
-                />
-              </figure>
-              <div className="title-wrapper">
-                <span>{val.name}</span>
+        {data.length === 0 ? (
+          <div className="flex justify-center items-center">
+            <h1 className="text-primary-dark">
+              Maaf ya, datannya belum ada nih...
+            </h1>
+          </div>
+        ) : (
+          data.map((val, i) => (
+            <div key={i} className="item-doing">
+              <div className="card-image card-fitur">
+                <figure className="wrapper-image">
+                  <img
+                    src={`${process.env.REACT_APP_BACKEND}/${val.image_url}`}
+                    alt={val.name}
+                    className="object-cover h-full w-full"
+                  />
+                </figure>
+                <div className="title-wrapper">
+                  <span>{val.name}</span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </ReactOwlCarousel>
     </section>
   );

@@ -1,10 +1,32 @@
 import Button from "components/Button";
 import React from "react";
 import Logo from "../assets/image/Logo_Halan2.png";
+import { useAuth } from "auth/authProvider";
+
+//Swal fire
+import Swal from "sweetalert2";
+import "sweetalert2/src/sweetalert2.scss";
 
 export default function Header(props) {
+  const ConsumeContext = useAuth();
   const getActiveClassLink = (path) => {
-    return props.location.pathname === path ? "active" : "";
+    return window.location.pathname === path ? "active" : "";
+  };
+
+  const logOutFunction = () => {
+    Swal.fire({
+      title: "Apakah anda yakin, ingin keluar?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#0A30B3",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Ya",
+      cancelButtonText: "Tidak",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        ConsumeContext.logoutAction();
+      }
+    });
   };
 
   if (props.isPayment) {
@@ -83,6 +105,37 @@ export default function Header(props) {
                   >
                     Agents
                   </Button>
+                </li>
+                <li className="nav-item">
+                  {localStorage.getItem("token") ? (
+                    <Button
+                      onClick={logOutFunction}
+                      type="button"
+                      className={`nav-link`}
+                      style={{
+                        background: "#d33",
+                        borderRadius: "10px",
+                        color: "white",
+                        padding: "10px 10px",
+                      }}
+                    >
+                      Logout
+                    </Button>
+                  ) : (
+                    <Button
+                      type="link"
+                      className={`nav-link w-fit`}
+                      style={{
+                        background: "#F79613",
+                        borderRadius: "10px",
+                        color: "white",
+                        padding: "10px 10px",
+                      }}
+                      href="/login"
+                    >
+                      Login / Register
+                    </Button>
+                  )}
                 </li>
               </ul>
             </div>

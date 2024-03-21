@@ -1,5 +1,6 @@
 import React from "react";
 import InputText from "components/InputText";
+import RupiahFormat from "utils/RupiahFormat";
 
 export default function BookingInformation({
   data,
@@ -13,7 +14,7 @@ export default function BookingInformation({
         <div className="content-booking-left">
           <figure>
             <img
-              src={itemDetails.image_url[0].url}
+              src={`${process.env.REACT_APP_BACKEND}/${itemDetails.image_url[0].url}`}
               alt={itemDetails.name}
               className="object-cover"
             />
@@ -28,8 +29,8 @@ export default function BookingInformation({
               </span>
             </div>
             <h4 className="text-prmary-blue m-0 p-0 font-medium text-lg">
-              {itemDetails.price * checkout.duration}K / {checkout.duration}{" "}
-              {itemDetails.unit}
+              Rp {RupiahFormat(itemDetails.price * checkout.duration)} /{" "}
+              {checkout.duration} {itemDetails.unit}
             </h4>
           </div>
         </div>

@@ -15,6 +15,10 @@
                         @apply bg-[#14B8A6];
                   }
             }
+
+            .input-group-button{
+                  @apply text-[20px] right-0 absolute inset-y-0 flex w-10 justify-center items-center border-transparent border-0 text-white rounded;
+            }
       
             input.form-control-t{
                   @apply flex-1 border px-1 py-3 text-sm bg-white text-center rounded text-primary-dark;      

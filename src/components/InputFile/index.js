@@ -55,6 +55,7 @@ export default function InputFile({
           onChange={onChange}
         />
         <input
+        type="text"
           onClick={() => refInputFile.current.click()}
           defaultValue={valueText}
           placeholder={placeholder}

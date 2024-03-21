@@ -1,0 +1,55 @@
+div.container-register {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+
+      .wrapper-register {
+            @apply max-w-[1000px] w-full h-[600px] lg:m-0 m-5 grid lg:grid-cols-2 grid-cols-1 shadow-2xl rounded-lg;
+
+            .left-wrapper {
+                  @apply lg:block hidden p-4;
+
+                  .wrapper {
+                        @apply w-full h-full rounded-lg bg-prmary-blue flex justify-end items-center;
+
+                        div {
+                              @apply max-w-[370px] pr-2 pl-8 py-6 border-l-[10px] border-t-[10px] border-b-[10px] border-white;
+                        }
+                  }
+            }
+
+            .right-wrapper {
+                  @apply flex flex-col justify-center items-center;
+
+                  .content {
+                        @apply max-w-[300px] lg:p-0 p-6 w-full;
+
+                        .input-text {
+
+                              @apply w-full;
+
+                              &.username::after {
+                                    content: 'Username';
+                                    @apply text-secondary-gray text-base -top-6 left-0 absolute;
+
+                              }
+
+                              &.password::after {
+                                    content: 'Password';
+                                    @apply text-secondary-gray text-base -top-6 left-0 absolute;
+
+                              }
+
+                              &.email::after {
+                                    content: 'Email';
+                                    @apply text-secondary-gray text-base -top-6 left-0 absolute;
+
+                              }
+                        }
+                  }
+
+            }
+      }
+}

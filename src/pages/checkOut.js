@@ -9,10 +9,20 @@ import Controller from "components/Stepper/Controller";
 import BookingInformation from "parts/BookingPart/BookingInformation";
 import Completed from "parts/BookingPart/Completed";
 import Payment from "parts/BookingPart/Payment";
-import { useParams } from "react-router-dom";
+import errorImage from "../assets/image/404.png";
+
+import { toPng } from "html-to-image";
+
+//redux
+import { connect } from "react-redux";
+import { submitBooking } from "../store/actions/checkOut";
 
 import itemDetails from "../api/detailPageApi.json";
-import withRouter from "./withRouter";
+// import withRouter from "./withRouter";
+
+// Toast js
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class checkOut extends Component {
   constructor(props) {
@@ -26,8 +36,10 @@ class checkOut extends Component {
         proofPayment: undefined,
         bankName: "",
         bankHolder: "",
+        invoice: "",
       },
     };
+    this.imageRef = React.createRef();
   }
 
   onChange = (e) => {
@@ -44,11 +56,84 @@ class checkOut extends Component {
     document.title = "Halan Halan | Payment";
   }
 
+  downloadImage = () => {
+    toPng(this.imageRef.current, { cacheBust: false })
+      .then((dataUrl) => {
+        const link = document.createElement("a");
+        link.download = "ticket-halan-halan.png";
+        link.href = dataUrl;
+        link.click();
+
+        window.location.href = "/";
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
+  submitForm = (nextStep) => {
+    const { data } = this.state;
+    const { page, checkout } = this.props;
+
+    const formData = new FormData();
+    formData.append("firstName", data.firstname);
+    formData.append("lastName", data.lastname);
+    formData.append("email", data.email);
+    formData.append("phoneNumber", data.phone);
+    formData.append("accountHolder", data.bankHolder);
+    formData.append("bankFrom", data.bankName);
+    formData.append("bookingStartDate", checkout.date.startDate);
+    formData.append("bookingEndDate", checkout.date.endDate);
+    formData.append("price", page.detailPage.price);
+    formData.append("duration", checkout.duration);
+    formData.append("gambar", data.proofPayment);
+    formData.append("idItem", checkout._id);
+    formData.append("userId", localStorage.getItem("userId"));
+
+    this.props
+      .submitBooking(formData, localStorage.getItem("token"))
+      .then((res) => {
+        this.setState({
+          data: {
+            ...this.state.data,
+            invoice: res.data.data.invoice,
+          },
+        });
+        nextStep();
+      })
+      .catch((err) =>
+        toast.error(`${err.message}!`, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+      );
+  };
+
   render() {
     const { data } = this.state;
-    const checkout = {
-      duration: this.props.params.duration,
-    };
+    const { checkout, page } = this.props;
+
+    if (!checkout) {
+      return (
+        <div className="container-error">
+          <div
+            className="wrapper"
+            style={{ backgroundImage: `url(${errorImage})` }}
+          >
+            <Button isLarge type="link" href="/">
+              Kembali
+            </Button>
+          </div>
+        </div>
+      );
+    }
+
     const steps = {
       bookingInformation: {
         title: "Informasi Pesanan",
@@ -57,7 +142,7 @@ class checkOut extends Component {
           <BookingInformation
             data={data}
             checkout={checkout}
-            itemDetails={itemDetails}
+            itemDetails={page.detailPage}
             propsOnChange={this.onChange}
           />
         ),
@@ -69,7 +154,7 @@ class checkOut extends Component {
           <Payment
             data={data}
             checkOut={checkout}
-            itemDetails={itemDetails}
+            itemDetails={page.detailPage}
             propsOnChange={this.onChange}
           />
         ),
@@ -77,7 +162,13 @@ class checkOut extends Component {
       completed: {
         title: "Yeayyy Finish...",
         description: null,
-        content: <Completed />,
+        content: (
+          <Completed
+            imageRef={this.imageRef}
+            invoice={this.state.data.invoice}
+            data={this.state.data}
+          />
+        ),
       },
     };
     return (
@@ -87,6 +178,7 @@ class checkOut extends Component {
         <Stepper steps={steps}>
           {(prevStep, nextStep, currentStep, steps) => (
             <>
+              <ToastContainer />
               <Numbering className="mt-4" current={currentStep} data={steps} />
 
               <Meta current={currentStep} data={steps} />
@@ -98,7 +190,7 @@ class checkOut extends Component {
                   <Button
                     className="btn-booking-back"
                     type="link"
-                    href={`/details/${itemDetails._id}`}
+                    href={`/details/${page.detailPage._id}`}
                   >
                     Batalkan
                   </Button>
@@ -131,7 +223,9 @@ class checkOut extends Component {
                       <Button
                         className="btn-booking-next"
                         type="button"
-                        onClick={nextStep}
+                        onClick={() => {
+                          this.submitForm(nextStep);
+                        }}
                       >
                         Lanjutkan
                       </Button>
@@ -141,7 +235,11 @@ class checkOut extends Component {
 
               {currentStep == "completed" && (
                 <Controller currentStep={currentStep}>
-                  <Button className=" btn-booking-next" type="link" href="/">
+                  <Button
+                    className=" btn-booking-next"
+                    type="button"
+                    onClick={this.downloadImage}
+                  >
                     Kembali ke Beranda
                   </Button>
                 </Controller>
@@ -154,4 +252,10 @@ class checkOut extends Component {
   }
 }
 
-export default withRouter(checkOut);
+const stateProps = (state) => ({
+  checkout: state.checkOut,
+  page: state.page,
+});
+
+// export default withRouter(checkOut);
+export default connect(stateProps, { submitBooking })(checkOut);

@@ -20,7 +20,7 @@ const Testimonial = ({data}) => {
         <img
           className="img-testimonial"
           alt="img-testimonial"
-          src={data.image_url}
+          src={`${process.env.REACT_APP_BACKEND}/${data.image_url}`}
         />
         <div className="wrapper-title-testimonial">
           <h1 className="text-dark ">{data.name}</h1>
