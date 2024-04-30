@@ -23,9 +23,9 @@ const Testimonial = ({data}) => {
           src={`${process.env.REACT_APP_BACKEND}/${data.image_url}`}
         />
         <div className="wrapper-title-testimonial">
-          <h1 className="text-dark ">{data.name}</h1>
+          <h1 className="">{data.name}</h1>
           <div className="flex flex-row md:mb-10 order-2">
-            <Bintang value={data.rate} />
+            <Bintang value={data.rate} sizing="Besar" />
           </div>
           <p>
             {onTruncate ? truncate(data.content) : data.content}
@@ -37,9 +37,9 @@ const Testimonial = ({data}) => {
               {onTruncate ? " Read More" : " Show Little"}
             </Button>
           </p>
-          <span className=" text-user-testi">
+          {/* <span className=" text-user-testi">
             {data.nameFamily}, {data.familyJobs}
-          </span>
+          </span> */}
           <Button
             type="button"
             isPrimaryBg={true}

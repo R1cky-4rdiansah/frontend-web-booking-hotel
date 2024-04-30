@@ -1,11 +1,12 @@
 import Button from "components/Button";
-import React from "react";
+import React, { useEffect } from "react";
 import Logo from "../assets/image/Logo_Halan2.png";
 import { useAuth } from "auth/authProvider";
 
 //Swal fire
 import Swal from "sweetalert2";
 import "sweetalert2/src/sweetalert2.scss";
+import Cookies from "js-cookie";
 
 export default function Header(props) {
   const ConsumeContext = useAuth();
@@ -100,14 +101,14 @@ export default function Header(props) {
                 <li className="nav-item">
                   <Button
                     type="link"
-                    href="/agents"
-                    className={`nav-link ${getActiveClassLink("/agents")}`}
+                    href="/about"
+                    className={`nav-link ${getActiveClassLink("/about")}`}
                   >
-                    Agents
+                    About
                   </Button>
                 </li>
                 <li className="nav-item">
-                  {localStorage.getItem("token") ? (
+                  {Cookies.get("token") ? (
                     <Button
                       onClick={logOutFunction}
                       type="button"

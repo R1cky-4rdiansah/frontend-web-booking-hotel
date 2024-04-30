@@ -1,5 +1,5 @@
 .stars{
-      @apply relative min-w-[200px] inline-flex;
+      @apply relative inline-flex;
       .star{
             @apply absolute inline-flex;
             mask: url("../../assets/icon/Stars.svg") no-repeat center left;

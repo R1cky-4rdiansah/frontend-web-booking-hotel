@@ -14,6 +14,7 @@ import { connect } from "react-redux";
 import { checkOutBooking } from "../store/actions/checkOut";
 import { fetchPage } from "store/actions/page";
 import { AuthContect } from "auth/authProvider";
+import Cookies from "js-cookie";
 
 class detailPage extends Component {
   static contextType = AuthContect;
@@ -30,7 +31,7 @@ class detailPage extends Component {
     this.props.fetchPage(
       `${process.env.REACT_APP_BACKEND}/api/v1/detail-hotel/${params}`,
       "detailPage",
-      localStorage.getItem("token")
+      Cookies.get("token")
     );
   }
 

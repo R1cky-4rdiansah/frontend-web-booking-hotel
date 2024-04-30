@@ -82,6 +82,7 @@
 
   .modal-body {
     overflow-y: auto;
+    padding: 24px;
   }
 }
 
@@ -127,7 +128,7 @@
   flex-shrink: 0;
   align-items: center;
   justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
-  padding: var(--#{$prefix}modal-header-padding);
+  padding: 25px;
   border-bottom: var(--#{$prefix}modal-header-border-width) solid var(--#{$prefix}modal-header-border-color);
   @include border-top-radius(var(--#{$prefix}modal-inner-border-radius));
 

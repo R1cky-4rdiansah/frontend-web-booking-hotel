@@ -1,9 +1,9 @@
 import Button from "components/Button";
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ refFooter }) => {
   return (
-    <section className="bg-primary md:py-12 py-10 relative">
+    <section className="bg-primary md:py-12 py-10 relative" ref={refFooter}>
       <div className="footer-wrapper">
         <div className="wrapper-text-about">
           <h4 className="text-white about">Tentang Kami</h4>

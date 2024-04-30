@@ -17,6 +17,8 @@ import OrderDetails from "pages/orderDetails";
 import LoginPage from "parts/Login/LoginPage";
 import RegisterPage from "parts/Register/RegisterPage";
 import AuthProvider, { useAuth } from "auth/authProvider";
+import FindsPage from "pages/findsPage";
+import StoriePage from "pages/storiePage";
 
 // const router = createBrowserRouter([
 //   { path: "/", element: <LandingPage /> },
@@ -50,6 +52,8 @@ function App() {
             <Route path="/details/:id" element={<DetailPage />} />
             <Route path="/payment" element={<CheckOut />} />
             <Route path="/order-details/:invoice" element={<OrderDetails />} />
+            <Route path="/find" element={<FindsPage />} />
+            <Route path="/storie" element={<StoriePage />} />
           </Route>
         </Routes>
       </AuthProvider>

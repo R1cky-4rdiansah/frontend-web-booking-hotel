@@ -134,7 +134,7 @@ section{
       @apply lg:col-span-6 col-span-12 flex flex-col justify-center md:gap-0 gap-1;
 
       h1{
-        @apply md:order-1 text-dark font-semibold md:flex hidden text-[50px] md:mb-10;
+        @apply text-primary-dark md:font-semibold flex lg:text-[50px] md:text-3xl text-base lg:mb-10 md:mb-3 mb-0 p-0;
       }
 
       p{
@@ -227,6 +227,56 @@ section{
 
 .frame-section{
   @apply flex flex-col md:gap-11 gap-3;
+
+  .carousel{
+    @apply w-full mt-[60px] h-[600px] relative md:block hidden;
+  }
+}
+
+.filter-search{
+  @apply mt-[80px] md:hidden block;
+}
+
+.filter-card-find{
+  @apply md:flex hidden flex-col gap-3 h-fit px-6 py-7 w-[270px] border border-secondary-gray rounded sticky top-[80px];
+}
+
+.card-content-find{
+  @apply w-full h-fit;
+}
+
+.slider-modal{
+  @apply fixed bottom-0 left-0 right-0 top-1/4 bg-white rounded-t-3xl z-[70] translate-y-full md:hidden block;
+
+  &.show{
+    animation-name: slide-up;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  &.close{
+    animation-name: slide-down;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+      transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(0);      
+  }
+  100% {
+    transform: translateY(100%);
+  }
 }
 
 .card{
@@ -243,14 +293,14 @@ section{
   }
 
   .body-text{
-    @apply sm:p-3 p-2 flex sm:flex-row flex-col sm:justify-between sm:items-center;
+    @apply sm:p-3 p-2 flex justify-between items-center relative;
 
     .text-price{
-      @apply font-medium sm:text-sm text-xs sm:order-first order-last sm:flex hidden;
+      @apply sm:relative absolute sm:text-primary-dark text-white sm:top-0 sm:left-0 -top-4 -left-2 sm:p-0 px-3 sm:rounded-none rounded-tr-md sm:bg-transparent bg-primary-orange  font-medium sm:text-sm text-xs order-first flex;
     }
 
     .text-location{
-      @apply flex sm:order-last order-first flex-col justify-end font-medium text-sm;
+      @apply flex order-last flex-col justify-end font-medium text-sm;
 
       .name{
         @apply font-medium sm:text-base text-xs;
@@ -751,6 +801,76 @@ section{
   }
 }
 
+.grid-card-image-find{
+  @apply grid xl:grid-cols-3 grid-cols-2 grid-flow-dense relative md:gap-4 gap-2 z-[3] h-full;
+
+  .card{
+    @apply w-full rounded-xl overflow-hidden relative cursor-pointer;
+    background: #FFF;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.20);
+
+    .top-image{
+      @apply w-full h-36 m-0 overflow-hidden;
+
+      img{
+        @apply scale-100 duration-[.25s] transition-all ease-in-out;
+      }
+    }
+
+    .body-text{
+      @apply sm:p-3 p-2 flex justify-between items-center relative;
+
+      .text-price{
+        @apply sm:relative absolute sm:text-primary-dark text-white sm:top-0 sm:left-0 -top-4 -left-2 sm:p-0 px-3 sm:rounded-none rounded-tr-md sm:bg-transparent bg-primary-orange  font-medium sm:text-sm text-xs order-first flex;
+      }
+
+      .text-location{
+        @apply flex order-last flex-col justify-end font-medium text-sm;
+
+        .name{
+          @apply font-medium sm:text-base text-xs;
+        }
+
+        .country{
+          @apply font-medium text-xs;
+        }
+      }
+
+      &::after{
+        content: "";
+        @apply absolute left-0 right-0 top-0 bottom-0;
+      }
+    }
+
+    .tag{
+      @apply absolute top-0 right-0 bg-primary2 rounded-tr-[10px] md:rounded-bl-[30px] rounded-bl-3xl text-center w-fit md:py-1 py-[2px] md:px-5 px-4 z-[3];
+
+      .text-tag {
+        @apply text-white font-semibold text-sm;
+      }
+    }
+
+    &:hover{
+      .top-image{
+        img{
+          @apply scale-110;
+        }
+      }
+    }
+  }
+}
+
+section.find-wrapper{
+  @apply flex md:flex-row flex-col gap-3;
+}
+
+.filter-mobile{
+  @apply md:hidden grid grid-cols-2 gap-2 ;
+}
+
+.button-upper{
+  @apply p-2 bg-primary-orange rounded fixed bottom-4 right-4 z-50 md:hidden block;
+}
 // .wrapper-loading {
 //   @apply absolute left-0 top-0 right-0 bottom-0 z-[999];
 
@@ -781,3 +901,56 @@ section{
 //   from {bottom: 0%; top: 0%;}
 //   to {bottom: 110%; top: -110%;}
 // }
+h3.header-storie{
+  @apply sm:mb-4 mb-2
+}
+
+.mobile-order{
+  @apply sm:hidden flex justify-between items-center;
+}
+
+.mobile-price{
+  @apply sm:hidden flex  items-center justify-between
+}
+
+.web-price{
+  @apply sm:flex hidden;
+}
+
+label.storie-input{
+  @apply flex sm:flex-row sm:gap-0 gap-2 flex-col items-stretch justify-between w-full p-2 sm:p-4 hover:shadow transition-all duration-300 bg-white border-2 peer-checked:border-primary-orange rounded cursor-pointer;
+
+  .order-text{
+    @apply sm:flex hidden flex-col justify-center items-end relative;
+  }
+}
+
+button.btn-star{
+  @apply sm:w-10 w-6 sm:h-10 h-6;
+}
+
+.star-storie{
+  @apply sm:min-w-[260px] min-w-[165px];
+}
+
+.open-slide-mob{
+  animation-name: open;
+  animation-duration: 1s;  
+  animation-fill-mode: forwards;
+}
+
+.close-slide-mob{
+  animation-name: close;
+  animation-duration: 1s;  
+  animation-fill-mode: forwards;
+}
+
+@keyframes open {
+  from { transform: translate(0, 100%); }
+  to {transform: translate(0, 0);}
+}
+
+@keyframes close {
+  from { transform: translate(0, 0); }
+  to {transform: translate(0, 100%);}
+}

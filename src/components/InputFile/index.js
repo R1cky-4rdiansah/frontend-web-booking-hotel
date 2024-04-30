@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRef } from "react";
 import propTypes from "prop-types";
-import "./index.scss";
+import "./indexInputFile.scss";
 
 export default function InputFile({
   placeholder,
@@ -13,10 +13,11 @@ export default function InputFile({
   append,
   prepend,
   propsOnChange,
+  previewImage,
 }) {
   const refInputFile = useRef(null);
   const [valueText, setValueText] = useState("");
-  const [prevImg, setPrevImage] = useState();
+  const [prevImg, setPrevImage] = useState(previewImage);
 
   const onChange = (e) => {
     const img = document.getElementById("prevImage");
@@ -36,10 +37,10 @@ export default function InputFile({
   };
 
   return (
-    <div className={["input-text", outerClassname].join(" ")}>
+    <div className={["input-file", outerClassname].join(" ")}>
       <img
         id="prevImage"
-        hidden
+        hidden={prevImg ? false : true}
         src={prevImg}
         alt="prev-image"
       />
@@ -55,7 +56,7 @@ export default function InputFile({
           onChange={onChange}
         />
         <input
-        type="text"
+          type="text"
           onClick={() => refInputFile.current.click()}
           defaultValue={valueText}
           placeholder={placeholder}
@@ -68,6 +69,7 @@ export default function InputFile({
 }
 InputFile.defaultProps = {
   placeholder: "Mohon masukkan file gambar",
+  previewImage: null,
 };
 
 InputFile.propTypes = {

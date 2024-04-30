@@ -10,6 +10,7 @@ import BookingInformation from "parts/BookingPart/BookingInformation";
 import Completed from "parts/BookingPart/Completed";
 import Payment from "parts/BookingPart/Payment";
 import errorImage from "../assets/image/404.png";
+import Cookies from "js-cookie";
 
 import { toPng } from "html-to-image";
 
@@ -88,10 +89,10 @@ class checkOut extends Component {
     formData.append("duration", checkout.duration);
     formData.append("gambar", data.proofPayment);
     formData.append("idItem", checkout._id);
-    formData.append("userId", localStorage.getItem("userId"));
+    formData.append("userId", Cookies.get("userId").split('"')[1]);
 
     this.props
-      .submitBooking(formData, localStorage.getItem("token"))
+      .submitBooking(formData, Cookies.get("token"))
       .then((res) => {
         this.setState({
           data: {

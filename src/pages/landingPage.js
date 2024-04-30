@@ -16,7 +16,7 @@ import { connect } from "react-redux";
 import { fetchPage } from "store/actions/page";
 import { AuthContect } from "auth/authProvider";
 class landingPage extends Component {
-  static contextType = AuthContect;
+  static  = AuthContect;
   constructor(props) {
     super(props);
     this.refMostpicked = React.createRef();

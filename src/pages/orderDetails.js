@@ -5,6 +5,7 @@ import RupiahFormat from "utils/RupiahFormat";
 // import { AuthContect } from "auth/authProvider";
 import { connect } from "react-redux";
 import { detailOrder } from "store/actions/checkOut";
+import Cookies from "js-cookie";
 
 class orderDetails extends Component {
   // static contextType = AuthContect;
@@ -26,13 +27,11 @@ class orderDetails extends Component {
     // const { token } = this.context;
     const invoice = window.location.pathname.split("/")[2];
 
-    await this.props
-      .detailOrder(localStorage.getItem("token"), invoice)
-      .then((resp) =>
-        this.setState({
-          data: resp.data.data,
-        })
-      );
+    await this.props.detailOrder(Cookies.get("token"), invoice).then((resp) =>
+      this.setState({
+        data: resp.data.data,
+      })
+    );
   };
 
   // downloadPdf = () => {

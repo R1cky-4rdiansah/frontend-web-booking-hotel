@@ -25,7 +25,7 @@ const LoginPage = () => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const submitForm = async () => {  
+  const submitForm = async () => {
     setIsloadingBtn(true);
     ConsumeContext.loginAction(data);
     return;
@@ -47,7 +47,10 @@ const LoginPage = () => {
           </div>
         </div>
         <div className="right-wrapper">
-          <div className="content flex justify-center items-center flex-col">
+          <form
+            onSubmit={submitForm}
+            className="content flex justify-center items-center flex-col"
+          >
             <h1 className="text-secondary-gray mb-20">Login_</h1>
             <InputText
               name="username"
@@ -104,7 +107,7 @@ const LoginPage = () => {
               }
             />
             <Button
-              type="button"
+              type="submit"
               isDisabled={
                 (data.username && data.password) !== "" ? false : true
               }
@@ -135,7 +138,7 @@ const LoginPage = () => {
               </Button>{" "}
               disini.
             </p>
-          </div>
+          </form>
         </div>
       </div>
     </div>

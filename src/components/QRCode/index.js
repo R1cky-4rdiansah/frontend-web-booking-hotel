@@ -14,7 +14,7 @@ const qrcode = ({ url, imageRef, invoice, data }) => {
       },
       (err, url) => {
         if (err) {
-          return console.log(err);
+          return alert.log(err);
         }
         setQrCode(url);
       }

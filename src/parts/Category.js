@@ -55,34 +55,33 @@ const Category = ({ data }) => {
                 </div>
               ) : (
                 val.itemId.map((val, i) => (
-                  <div key={i} className="card mb-[2px]">
-                    {val.isPopular && (
-                      <div className="tag">
-                        <span className="text-tag">Populer</span>
-                      </div>
-                    )}
-                    <figure className="top-image">
-                      <img
-                        src={`${process.env.REACT_APP_BACKEND}/${val.imageId[0].imageUrl}`}
-                        className="object-cover w-full h-full"
-                      />
-                    </figure>
-                    <div className="body-text">
-                      <Button
-                        type="link"
-                        href={`/details/${val._id}`}
-                        className="text-price text-dark stretched-link"
-                      >
-                        Rp {RupiahFormat(val.price)}
-                      </Button>
-                      <div className="text-location">
-                        <span className="name text-dark">{val.title}</span>
-                        <span className="country text-secondary">
-                          {val.city}, {val.country}
+                  <Button type="link" href={`/details/${val._id}`}>
+                    <div key={i} className="card mb-[2px]">
+                      {val.isPopular && (
+                        <div className="tag">
+                          <span className="text-tag">Populer</span>
+                        </div>
+                      )}
+                      <figure className="top-image">
+                        <img
+                          src={`${process.env.REACT_APP_BACKEND}/${val.imageId[0].imageUrl}`}
+                          className="object-cover w-full h-full"
+                        />
+                      </figure>
+                      <div className="body-text">
+                        <span className="text-price">
+                          Rp {RupiahFormat(val.price)}
                         </span>
+
+                        <div className="text-location">
+                          <span className="name text-dark">{val.title}</span>
+                          <span className="country text-secondary">
+                            {val.city}, {val.country}
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Button>
                 ))
               )}
             </ReactOwlCarousel>

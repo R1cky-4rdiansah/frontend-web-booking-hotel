@@ -1,0 +1,29 @@
+label.radio-button-label {
+      @apply flex items-center cursor-pointer;
+
+      input.input-radio-button {
+            @apply hidden;
+
+            &:checked+span.radio-button-span:after {
+                  @apply opacity-100
+            }
+      }
+
+      span.radio-button-span {
+            @apply relative text-xs text-secondary-gray;
+
+            &:before,
+            &:after {
+                  content: '';
+            }
+
+            &:before {
+                  @apply w-6 h-6 mr-3 inline-block align-middle border rounded;
+            }
+
+            &:after {
+                  @apply w-4 h-4 absolute left-[4px] top-[4px] bg-primary-orange opacity-0 transition rounded;
+            }
+      }
+
+}

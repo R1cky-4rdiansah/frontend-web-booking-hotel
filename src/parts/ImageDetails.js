@@ -53,7 +53,7 @@ const ImageDetails = ({ data, startBooking }) => {
                 pagination={{
                   clickable: true,
                 }}
-                className="mySwiper w-full h-full bg-white"
+                className="mySwiper w-full h-full p-0 m-0 bg-white"
               >
                 {data.image_url &&
                   data.image_url.map((val, i) => (
@@ -81,7 +81,7 @@ const ImageDetails = ({ data, startBooking }) => {
                 pagination={{
                   clickable: true,
                 }}
-                className="mySwiper w-full h-full bg-white"
+                className="mySwiper w-full h-full p-0 m-0 bg-white"
               >
                 {data.image_url &&
                   data.image_url.map((val, i) => (

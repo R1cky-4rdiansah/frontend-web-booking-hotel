@@ -1,0 +1,59 @@
+.input-text{
+      @apply relative flex flex-col gap-1;
+
+      .input-group-t{
+            @apply bg-transparent flex gap-2 w-full relative;
+
+            &.common{
+                  @apply md:max-w-[400px]
+            }
+
+            .input-group-text-t{
+                  @apply text-[20px] flex w-10 justify-center items-center pointer-events-none cursor-auto border-transparent border-0 text-white rounded;
+                  user-select: none;
+      
+                  &.minus{
+                  @apply bg-[#F43F5E];
+                  }
+      
+                  &.plus{
+                        @apply bg-[#14B8A6];
+                  }
+            }
+
+            .input-group-button{
+                  @apply text-[20px] right-0 absolute inset-y-0 flex w-10 justify-center items-center border-transparent border-0 text-white rounded;
+            }
+
+            .input-group-button-search{
+                  @apply text-sm px-2 flex w-12 justify-center items-center border-transparent border-0 text-white bg-primary-orange;
+                  border-top-right-radius: 20px;
+                  border-bottom-right-radius: 20px; 
+            }
+      
+            input.form-control-t{
+                  @apply flex-1 text-sm border py-3 px-4 bg-white text-primary-dark;   
+                  
+                  &.common{
+                        @apply rounded
+                  }
+
+                  &.search{
+                        border-bottom-left-radius: 20px;
+                        border-top-left-radius: 20px;
+                  }
+                  
+                  &:focus{
+                       @apply outline-none;
+                  }
+
+                  &::placeholder{
+                        @apply text-secondary-gray;
+                  }
+            }
+      }
+
+      .error-helper{
+            @apply p-2 bg-red-600 text-white rounded-lg text-sm w-fit;
+      }
+}

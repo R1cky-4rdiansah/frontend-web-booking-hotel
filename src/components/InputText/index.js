@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import propTypes from "prop-types";
-
-import './index.scss'
+import "./indexInputText.scss";
+import { XMarkIcon } from "@heroicons/react/20/solid";
 
 export default function InputText({
   type,
@@ -14,7 +14,9 @@ export default function InputText({
   append,
   prepend,
   propsOnChange,
-  secure
+  secure,
+  search,
+  load,
 }) {
   const [hasError, setHasError] = useState(null);
   let pattern = "";
@@ -42,7 +44,7 @@ export default function InputText({
   };
   return (
     <div className={["input-text", outerClassname].join(" ")}>
-      <div className="input-group-t">
+      <div className={`input-group-t ${search ? "" : "common"}`}>
         {prepend && <span className="input-group-text-t">{prepend}</span>}
         <input
           name={name}
@@ -51,10 +53,35 @@ export default function InputText({
           pattern={pattern}
           placeholder={placeholder}
           onChange={onChange}
-          className={["form-control-t relative", inputClassname].join(" ")}
+          className={[
+            `form-control-t relative ${
+              search ? "text-left search" : "text-center common"
+            } `,
+            inputClassname,
+          ].join(" ")}
         />
         {append && <span className="input-group-text-t">{append}</span>}
         {secure && <button className="input-group-button">{secure}</button>}
+        {search && value.length == 0 ? (
+          <button className="input-group-button-search">{search}</button>
+        ) : search && value.length != 0 ? (
+          <button
+            onClick={() =>
+              propsOnChange({
+                target: {
+                  name: name,
+                  value: "",
+                },
+              })
+            }
+            className="input-group-button-search"
+          >
+            <XMarkIcon
+              className="h-4 w-4 bg-primary-orange text-white"
+              aria-hidden="true"
+            />
+          </button>
+        ) : null}
       </div>
       {hasError && <span className="error-helper">{hasError}</span>}
     </div>
@@ -74,6 +101,7 @@ InputText.propTypes = {
   append: propTypes.oneOfType([propTypes.string, propTypes.number]),
   prepend: propTypes.oneOfType([propTypes.string, propTypes.number]),
   propsOnChange: propTypes.func,
+  load: propTypes.func,
   type: propTypes.string,
   placeholder: propTypes.string,
   outerClassname: propTypes.string,

@@ -1,0 +1,11 @@
+textarea{
+  @apply border bg-white text-primary-dark p-2 text-sm rounded;
+
+  &:focus{
+    @apply outline-none;
+  }
+
+  &::placeholder{
+    @apply text-secondary-gray text-sm;
+  }
+}
