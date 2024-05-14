@@ -233,6 +233,10 @@ section{
   }
 }
 
+.frame-section-about{
+  @apply flex flex-col md:gap-28 gap-3;
+}
+
 .filter-search{
   @apply mt-[80px] md:hidden block;
 }
@@ -953,4 +957,97 @@ button.btn-star{
 @keyframes close {
   from { transform: translate(0, 0); }
   to {transform: translate(0, 100%);}
+}
+
+.hero-contact-wrapper{
+  @apply flex md:flex-row flex-col justify-center items-center lg:gap-28 gap-14;
+}
+
+.text-hero-wrapper{
+  @apply flex flex-col lg:w-96 md:w-64 w-[332px];
+
+  p{
+    @apply md:mt-10 mt-2;
+  }
+
+  button{
+    @apply md:mt-[70px] mt-1 md:block hidden;
+  }
+}
+
+h1.title-about{
+  @apply md:text-[50px] text-2xl;
+}
+
+.text-mobile{
+  @apply md:mx-auto;
+}
+
+.wrapper-text-skill{
+  @apply flex flex-col md:gap-6 gap-2;
+}
+
+.wrapper-skill{
+  @apply md:mt-14 mt-2 grid lg:gap-10 md:gap-4 gap-2 lg:grid-cols-8 md:grid-cols-6 grid-cols-4;
+
+  div > img{
+    @apply md:w-24 md:h-24 w-12 h-12 object-cover;
+  }
+}
+
+section.hero-about{
+  @apply md:mt-[140px] mt-20;
+}
+
+.wrapper-flex-sevice{
+  @apply flex flex-col md:gap-14 gap-2;
+}
+
+.wrapper-service-card-text{
+  @apply flex sm:flex-row flex-col justify-center items-center md:gap-24 gap-3;
+}
+
+.wrapper-edu{
+  @apply flex flex-col md:gap-14 gap-2;
+
+  .grid-edu{
+    @apply grid md:grid-cols-2 grid-cols-1 md:gap-12 gap-2;
+
+    div > .title-edu {
+      @apply flex justify-between items-center md:gap-2 gap-1;
+      
+      div > h4{
+        @apply md:text-2xl text-lg text-primary-orange font-semibold;
+      }
+
+      div > h6{
+        @apply md:text-base text-sm text-primary-dark font-semibold;
+      }
+    }
+
+    h6{
+      @apply md:text-base text-sm text-primary-dark font-semibold;
+    }
+
+  }
+}
+
+.wrapper-text-contact{
+  @apply flex flex-col md:gap-14 gap-2;
+
+  .wrapper-contact{
+    @apply flex md:flex-row flex-col items-center justify-center lg:gap-24 md:gap-16 gap-3 ;
+  
+    .form-contact{
+      @apply md:w-[380px] w-72 md:flex  flex-col md:gap-4 gap-3 hidden;
+    }
+
+    .garis{
+      @apply border-r h-[100px] md:block hidden;
+    }
+
+    .my-contact{
+      @apply flex flex-col md:gap-4 gap-2 md:w-[380px] w-72;
+    }
+  }
 }

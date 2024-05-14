@@ -19,6 +19,7 @@ import RegisterPage from "parts/Register/RegisterPage";
 import AuthProvider, { useAuth } from "auth/authProvider";
 import FindsPage from "pages/findsPage";
 import StoriePage from "pages/storiePage";
+import AboutPage from "pages/aboutPage";
 
 // const router = createBrowserRouter([
 //   { path: "/", element: <LandingPage /> },
@@ -48,6 +49,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route element={<PrivateRoute />}>
             <Route path="/details/:id" element={<DetailPage />} />
             <Route path="/payment" element={<CheckOut />} />

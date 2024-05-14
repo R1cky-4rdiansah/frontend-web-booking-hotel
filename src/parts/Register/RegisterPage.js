@@ -86,6 +86,7 @@ const RegisterPage = () => {
             <InputText
               name="username"
               id="username"
+              type="text"
               value={data.username}
               propsOnChange={onChange}
               inputClassname="w-full"

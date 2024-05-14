@@ -59,6 +59,7 @@ const LoginPage = () => {
               propsOnChange={onChange}
               inputClassname="w-full"
               outerClassname="username"
+              type="text"
             />
             <InputText
               name="password"

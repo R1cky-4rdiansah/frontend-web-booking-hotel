@@ -33,7 +33,7 @@ export default class findsPage extends Component {
 
     const myCarouselElement = document.querySelector("#MyCarousel");
     new bootstrap.Carousel(myCarouselElement, {
-      interval: 4000,
+      interval: 5000,
       touch: false,
     });
     this.fetchData();
@@ -154,6 +154,7 @@ export default class findsPage extends Component {
             <div className="carousel-indicators">
               <button
                 type="button"
+                disabled
                 data-bs-target="#MyCarousel"
                 data-bs-slide-to="0"
                 className="active"
@@ -162,12 +163,14 @@ export default class findsPage extends Component {
               ></button>
               <button
                 type="button"
+                disabled
                 data-bs-target="#MyCarousel"
                 data-bs-slide-to="1"
                 aria-label="Slide 2"
               ></button>
               <button
                 type="button"
+                disabled
                 data-bs-target="#MyCarousel"
                 data-bs-slide-to="2"
                 aria-label="Slide 3"
