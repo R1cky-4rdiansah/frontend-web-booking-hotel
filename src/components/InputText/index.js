@@ -61,7 +61,7 @@ export default function InputText({
           ].join(" ")}
         />
         {append && <span className="input-group-text-t">{append}</span>}
-        {secure && <button className="input-group-button">{secure}</button>}
+        {secure && <div className="input-group-button">{secure}</div>}
         {search && value.length == 0 ? (
           <button className="input-group-button-search">{search}</button>
         ) : search && value.length != 0 ? (

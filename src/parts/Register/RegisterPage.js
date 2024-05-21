@@ -111,7 +111,7 @@ const RegisterPage = () => {
               type={type}
               secure={
                 type === "password" ? (
-                  <button onClick={() => setType("text")}>
+                  <button onClick={() => setType("text")} type="button">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -128,7 +128,7 @@ const RegisterPage = () => {
                     </svg>
                   </button>
                 ) : (
-                  <button onClick={() => setType("password")}>
+                  <button onClick={() => setType("password")} type="button">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

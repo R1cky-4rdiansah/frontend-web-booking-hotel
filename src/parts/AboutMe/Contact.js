@@ -12,21 +12,25 @@ const data = [
   {
     title: "Gmail",
     src: gmail,
+    link: "mailto:r1cky.ardi4nsah.14@gmail.com",
     name: "r1cky.ardi4nsah.14@gmail.com",
   },
   {
     title: "WhatsApp",
     src: wa,
+    link: "https://wa.me/6285866123403",
     name: "r1cky.ardi4nsah.14@gmail.com",
   },
   {
     title: "Alamat",
     src: location,
+    link: "https://maps.app.goo.gl/nzTezsuxgqYLjkAbA",
     name: "Kedungsono, Bulu, Sukoharjo",
   },
   {
     title: "Github",
     src: github,
+    link: "https://github.com/R1cky-4",
     name: "R1cky-4",
   },
 ];
@@ -114,7 +118,13 @@ const Contact = () => {
                 <span className="text-[10px] text-secondary-gray">
                   {val.title}
                 </span>
-                <span className="text-xs text-primary-dark">{val.name}</span>
+                <a
+                  href={val.link}
+                  target="_blank"
+                  className="text-xs text-primary-dark cursor-pointer text-decoration-none"
+                >
+                  {val.name}
+                </a>
               </div>
             </div>
           ))}

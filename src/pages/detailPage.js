@@ -54,7 +54,9 @@ class detailPage extends Component {
             startBooking={this.props.checkOutBooking}
           />
           <Doing data={page.detailPage.doing} />
-          <Testimonial data={page.detailPage.testimonial} />
+          {page.detailPage.testimonial && (
+            <Testimonial data={page.detailPage.testimonial} />
+          )}
           <Footer />
         </div>
       </>

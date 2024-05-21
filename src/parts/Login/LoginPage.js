@@ -27,7 +27,8 @@ const LoginPage = () => {
 
   const submitForm = async () => {
     setIsloadingBtn(true);
-    ConsumeContext.loginAction(data);
+    await ConsumeContext.loginAction(data);
+    setIsloadingBtn(false);
     return;
   };
 
@@ -71,7 +72,7 @@ const LoginPage = () => {
               type={type}
               secure={
                 type === "password" ? (
-                  <button onClick={() => setType("text")}>
+                  <button onClick={() => setType("text")} type="button">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -88,7 +89,7 @@ const LoginPage = () => {
                     </svg>
                   </button>
                 ) : (
-                  <button onClick={() => setType("password")}>
+                  <button onClick={() => setType("password")} type="button">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
