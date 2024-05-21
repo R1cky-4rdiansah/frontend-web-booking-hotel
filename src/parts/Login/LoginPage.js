@@ -49,7 +49,6 @@ const LoginPage = () => {
         </div>
         <div className="right-wrapper">
           <form
-            onSubmit={submitForm}
             className="content flex justify-center items-center flex-col"
           >
             <h1 className="text-secondary-gray mb-20">Login_</h1>
@@ -109,7 +108,7 @@ const LoginPage = () => {
               }
             />
             <Button
-              type="submit"
+              type="button"
               isDisabled={
                 (data.username && data.password) !== "" ? false : true
               }

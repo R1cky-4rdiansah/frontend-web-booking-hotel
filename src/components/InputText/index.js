@@ -46,20 +46,36 @@ export default function InputText({
     <div className={["input-text", outerClassname].join(" ")}>
       <div className={`input-group-t ${search ? "" : "common"}`}>
         {prepend && <span className="input-group-text-t">{prepend}</span>}
-        <input
-          name={name}
-          type={type}
-          value={value}
-          pattern={pattern}
-          placeholder={placeholder}
-          onChange={onChange}
-          className={[
-            `form-control-t relative ${
-              search ? "text-left search" : "text-center common"
-            } `,
-            inputClassname,
-          ].join(" ")}
-        />
+        {pattern == "" ? (
+          <input
+            name={name}
+            type={type}
+            value={value}
+            placeholder={placeholder}
+            onChange={onChange}
+            className={[
+              `form-control-t relative ${
+                search ? "text-left search" : "text-center common"
+              } `,
+              inputClassname,
+            ].join(" ")}
+          />
+        ) : (
+          <input
+            name={name}
+            type={type}
+            value={value}
+            pattern={pattern}
+            placeholder={placeholder}
+            onChange={onChange}
+            className={[
+              `form-control-t relative ${
+                search ? "text-left search" : "text-center common"
+              } `,
+              inputClassname,
+            ].join(" ")}
+          />
+        )}
         {append && <span className="input-group-text-t">{append}</span>}
         {secure && <div className="input-group-button">{secure}</div>}
         {search && value.length == 0 ? (
