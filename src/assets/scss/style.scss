@@ -1048,7 +1048,7 @@ section.hero-about{
   @apply flex flex-col md:gap-14 gap-2;
 
   .wrapper-contact{
-    @apply flex md:flex-row flex-col items-center justify-center lg:gap-24 md:gap-16 gap-3 ;
+    @apply flex items-center justify-center lg:gap-24 md:gap-16 gap-3 flex-1 ;
   
     .form-contact{
       @apply md:w-[380px] w-72 md:flex  flex-col md:gap-4 gap-3 hidden;
@@ -1059,7 +1059,7 @@ section.hero-about{
     }
 
     .my-contact{
-      @apply flex flex-col md:gap-4 gap-2 md:w-[380px] w-72;
+      @apply flex justify-around lg:flex-row flex-col lg:gap-0 gap-3 lg:w-full w-fit;
     }
   }
 }

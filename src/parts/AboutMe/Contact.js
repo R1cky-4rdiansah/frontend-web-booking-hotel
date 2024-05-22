@@ -24,7 +24,7 @@ const data = [
   {
     title: "Alamat",
     src: location,
-    link: "https://maps.app.goo.gl/nzTezsuxgqYLjkAbA",
+    link: "https://maps.app.goo.gl/U3rdVnmdyJkjkTBs9",
     name: "Kedungsono, Bulu, Sukoharjo",
   },
   {
@@ -43,7 +43,7 @@ const Contact = () => {
         <span className="text-primary-orange">Contact</span>
       </h1>
       <div className="wrapper-contact">
-        <div className="form-contact">
+        {/* <div className="form-contact">
           <div className="grid grid-cols-2 gap-5">
             <div className="flex flex-col gap-2">
               <label htmlFor="nama">Nama</label>
@@ -109,10 +109,10 @@ const Contact = () => {
             <PaperAirplaneIcon className="ml-2 w-4 h-4 text-white" />
           </Button>
         </div>
-        <div className="garis"></div>
+        <div className="garis"></div> */}
         <div className="my-contact">
           {data.map((val, i) => (
-            <div key={i} className="flex gap-4 items-center">
+            <div key={i} className="flex gap-2 items-center">
               <img className="w-12 h-12 object-cover" src={val.src} />
               <div className="flex justify-start flex-col">
                 <span className="text-[10px] text-secondary-gray">
