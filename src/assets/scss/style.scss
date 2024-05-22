@@ -228,6 +228,18 @@ section{
 .frame-section{
   @apply flex flex-col md:gap-11 gap-3;
 
+  &.full-height{
+    @apply min-h-screen;
+  }
+
+  .main{
+    @apply flex-1;
+
+    &.mid{
+      @apply flex justify-center items-center;
+    }
+  }
+
   .carousel{
     @apply w-full mt-[60px] h-[600px] relative md:block hidden;
   }

@@ -160,16 +160,18 @@ export class storiePage extends Component {
       return (
         <>
           <Header {...this.props}></Header>
-          <div className="frame-section">
+          <div className="frame-section full-height">
             <ToastContainer />
-            <ListBooking
-              propsOnChange={this.onChange}
-              sendTestionial={this.sendTestionial}
-              data={data}
-              dataStorie={dataStorie}
-              updateTestominail={this.updateTestominail}
-              onChangeEdit={this.onChangeEdit}
-            />
+            <div className={`main ${dataStorie == 0 ? "mid" : ""} `}>
+              <ListBooking
+                propsOnChange={this.onChange}
+                sendTestionial={this.sendTestionial}
+                data={data}
+                dataStorie={dataStorie}
+                updateTestominail={this.updateTestominail}
+                onChangeEdit={this.onChangeEdit}
+              />
+            </div>
             <Footer refFooter={this.footer} />
           </div>
         </>
