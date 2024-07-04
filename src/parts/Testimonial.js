@@ -12,7 +12,7 @@ const Testimonial = ({data}) => {
 
   return (
     <section>
-      <h4 className="tag-category text-secondary mb-3 md:hidden visible">
+      <h4 className="tag-category mb-3 md:hidden visible">
         Testimonial
       </h4>
 
@@ -31,7 +31,7 @@ const Testimonial = ({data}) => {
             {onTruncate ? truncate(data.content) : data.content}
             <Button
               type="button"
-              className="inline md:hidden text-secondary font-semibold text-base"
+              className="inline ml-2 md:hidden text-secondary font-semibold text-base"
               onClick={() => setTruncate(!onTruncate)}
             >
               {onTruncate ? " Read More" : " Show Little"}

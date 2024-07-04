@@ -181,7 +181,7 @@ export default class findsPage extends Component {
               <div className="carousel-item active h-full">
                 <img
                   src="/assets/image/Apartemen%201.jpg"
-                  className="h-full w-full"
+                  className="h-full w-full object-fit-cover"
                   alt="..."
                 />
                 <div className="absolute bottom-[50%] translate-y-1/2 z-20 left-7 right-7 text-center text-white">
@@ -196,7 +196,7 @@ export default class findsPage extends Component {
               <div className="carousel-item h-full">
                 <img
                   src="/assets/image/Apartemen%202.jpg"
-                  className="h-full w-full"
+                  className="h-full w-full object-fit-cover"
                   alt="..."
                 />
                 <div className="absolute bottom-[50%] translate-y-1/2 z-20 left-7 right-7 text-center text-white">
@@ -209,7 +209,7 @@ export default class findsPage extends Component {
               <div className="carousel-item h-full">
                 <img
                   src="/assets/image/Apartemen%203.jpg"
-                  className="h-full w-full"
+                  className="h-full w-full object-fit-cover"
                   alt="..."
                 />
                 <div className="absolute bottom-[50%] translate-y-1/2 z-20 left-7 right-7 text-center text-white">

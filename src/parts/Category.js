@@ -36,7 +36,7 @@ const Category = ({ data }) => {
       ) : (
         data.map((val, i) => (
           <section key={i}>
-            <h4 className="tag-category text-secondary mb-3">{val.name}</h4>
+            <h4 className="tag-category mb-3">{val.name}</h4>
             <ReactOwlCarousel
               className="owl-theme"
               loop

@@ -6,7 +6,7 @@ import Button from "components/Button";
 const MostPicked = ({ data, refMostpicked }) => {
   return (
     <section ref={refMostpicked}>
-      <h4 className="tag-category text-secondary mb-3">Sering Dipesan</h4>
+      <h4 className="tag-category mb-3">Sering Dipesan</h4>
       <div className="grid-card-image">
         {data.length === 0 ? (
           <div className="flex justify-center items-center">
