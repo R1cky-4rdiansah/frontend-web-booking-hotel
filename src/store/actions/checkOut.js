@@ -10,14 +10,20 @@ export const checkOutBooking = (payload) => (dispatch) => {
 
 export const submitBooking = (payload, token) => () => {
   axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-  return axios.post("http://localhost:3000/api/v1/booking-post", payload, {
-    headers: { contentType: "multipart/form-data" },
-  });
+  return axios.post(
+    `${process.env.REACT_APP_BACKEND}/api/v1/booking-post`,
+    payload,
+    {
+      headers: { contentType: "multipart/form-data" },
+    }
+  );
 };
 
 export const detailOrder = (token, invoice) => () => {
   if (token) {
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   }
-  return axios.get(`http://localhost:3000/api/v1/detail-order/${invoice}`);
+  return axios.get(
+    `${process.env.REACT_APP_BACKEND}/api/v1/detail-order/${invoice}`
+  );
 };

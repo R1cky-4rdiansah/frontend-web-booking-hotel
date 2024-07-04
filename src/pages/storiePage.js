@@ -40,7 +40,7 @@ export class storiePage extends Component {
     const userId = this.state.data.userId;
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
     await axios
-      .post("http://localhost:3000/api/v1/storie-page", { userId })
+      .post(`${process.env.REACT_APP_BACKEND}/api/v1/storie-page`, { userId })
       .then((res) => {
         this.setState({
           dataStorie: res.data.data,
@@ -82,7 +82,7 @@ export class storiePage extends Component {
     const token = Cookies.get("token");
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
     await axios
-      .post("http://localhost:3000/api/v1/post-rating", formData, {
+      .post(`${process.env.REACT_APP_BACKEND}/api/v1/post-rating`, formData, {
         headers: { contentType: "multipart/form-data" },
       })
       .then(() =>
@@ -125,7 +125,7 @@ export class storiePage extends Component {
     const token = Cookies.get("token");
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
     await axios
-      .post("http://localhost:3000/api/v1/post-rating", formData, {
+      .post(`${process.env.REACT_APP_BACKEND}/api/v1/post-rating`, formData, {
         headers: { contentType: "multipart/form-data" },
       })
       .then(() =>
@@ -162,7 +162,7 @@ export class storiePage extends Component {
           <Header {...this.props}></Header>
           <div className="frame-section full-height">
             <ToastContainer />
-            <div className={`main ${dataStorie == 0 ? "mid" : ""} `}>
+            <div className={`main ${dataStorie === 0 ? "mid" : ""} `}>
               <ListBooking
                 propsOnChange={this.onChange}
                 sendTestionial={this.sendTestionial}

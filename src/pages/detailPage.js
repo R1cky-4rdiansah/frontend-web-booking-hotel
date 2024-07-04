@@ -1,4 +1,3 @@
-import Button from "components/Button";
 import Header from "parts/Header";
 import ImageDetails from "parts/ImageDetails";
 import React, { Component } from "react";
@@ -18,9 +17,6 @@ import Cookies from "js-cookie";
 
 class detailPage extends Component {
   static contextType = AuthContect;
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     document.title = "Detail Booking";

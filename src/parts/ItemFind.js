@@ -36,7 +36,7 @@ const ItemFind = ({
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [paginating, refFooter]);
 
   return (
     <section className="find-wrapper">
@@ -177,10 +177,10 @@ const ItemFind = ({
       </div>
       <div className="card-content-find" ref={refContent}>
         <div className="grid-card-image-find">
-          {datas.length !== 0 && isLoading == false ? (
+          {datas.length !== 0 && isLoading === false ? (
             datas.map((val, i) => (
-              <Button type="link" href={`/details/${val._id}`}>
-                <div key={i} className="card mb-[2px]">
+              <Button key={i} type="link" href={`/details/${val._id}`}>
+                <div className="card mb-[2px]">
                   {val.isPopular && (
                     <div className="tag">
                       <span className="text-tag">Populer</span>
@@ -188,6 +188,7 @@ const ItemFind = ({
                   )}
                   <figure className="top-image">
                     <img
+                      alt={val.imageId[0].imageUrl}
                       src={`${process.env.REACT_APP_BACKEND}/${val.imageId[0].imageUrl}`}
                       className="object-cover w-full h-full"
                     />
@@ -208,7 +209,7 @@ const ItemFind = ({
                 </div>
               </Button>
             ))
-          ) : datas.length == 0 && isLoading == false ? (
+          ) : datas.length === 0 && isLoading === false ? (
             <div className="col-span-3 align-middle flex justify-center items-center h-full">
               <h6 className="text-primary-dark font-medium">
                 Maaf, Hotel belum ada nih...
@@ -219,7 +220,7 @@ const ItemFind = ({
               <div role="status" className="mr-2">
                 <svg
                   aria-hidden="true"
-                  class="w-6 h-6 text-gray-200 animate-spin fill-primary-orange"
+                  className="w-6 h-6 text-gray-200 animate-spin fill-primary-orange"
                   viewBox="0 0 100 101"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -233,7 +234,7 @@ const ItemFind = ({
                     fill="currentFill"
                   />
                 </svg>
-                <span class="sr-only">Loading...</span>
+                <span className="sr-only">Loading...</span>
               </div>
               <span className="text-base text-primary-orange">
                 Tunggu ya...

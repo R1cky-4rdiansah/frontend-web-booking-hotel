@@ -1,7 +1,4 @@
-import React, { Component, useRef } from "react";
-
-// import LandingPageApi from "api/landingPageApi.json";
-
+import React, { Component } from "react";
 import Header from "parts/Header";
 import Hero from "parts/Hero";
 import MostPicked from "parts/MostPicked";
@@ -9,14 +6,13 @@ import Category from "parts/Category";
 import Testimonial from "parts/Testimonial";
 import Footer from "parts/Footer";
 import LoadingPage from "components/loadingPage";
-// import withRouter from "./withRouter";
 
 //redux
 import { connect } from "react-redux";
 import { fetchPage } from "store/actions/page";
 import { AuthContect } from "auth/authProvider";
 class landingPage extends Component {
-  static  = AuthContect;
+  static = AuthContect;
   constructor(props) {
     super(props);
     this.refMostpicked = React.createRef();
@@ -30,7 +26,7 @@ class landingPage extends Component {
     if (!this.props.page.landingPage) {
       this.props.fetchPage(
         `${process.env.REACT_APP_BACKEND}/api/v1/landing-page`,
-        "landingPage",
+        "landingPage"
       );
     }
   }

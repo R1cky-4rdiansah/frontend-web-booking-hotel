@@ -1,5 +1,6 @@
+/* eslint-disable */
 import axios from "axios";
-import { useContext, createContext, useState, useEffect } from "react";
+import { useContext, createContext, useState } from "react";
 
 export const AuthContect = createContext();
 import { useLocation, useNavigate } from "react-router-dom";
@@ -10,6 +11,7 @@ const AuthProvider = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [token, setToken] = useState(Cookies.get("token") || null);
+  const [userId, setUserId] = useState(Cookies.get("userId") || null);
   const [pathname, setPathname] = useState("");
 
   const getPathname = () => {
@@ -20,9 +22,10 @@ const AuthProvider = ({ children }) => {
   const loginAction = async (data) => {
     axios.defaults.withCredentials = true;
     await axios
-      .post("http://localhost:3000/api/v1/login", data)
+      .post(`${process.env.REACT_APP_BACKEND}/api/v1/login`, data)
       .then((res) => {
         setToken(res.data.token);
+        setUserId(res.data.userId);
         navigate(pathname);
       })
       .catch((err) => {
@@ -41,6 +44,7 @@ const AuthProvider = ({ children }) => {
 
   const logoutAction = () => {
     setToken(null);
+    setUserId(null);
     Cookies.remove("token");
     Cookies.remove("userId");
     navigate("/");
@@ -49,6 +53,7 @@ const AuthProvider = ({ children }) => {
   return (
     <AuthContect.Provider
       value={{
+        userId,
         token,
         loginAction,
         logoutAction,

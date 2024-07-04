@@ -27,7 +27,7 @@ const ListBooking = ({
   const showModal = async (header, itemId) => {
     setHeaderTitle(header);
     await axios
-      .post("http://localhost:3000/api/v1/my-storie", {
+      .post(`${process.env.REACT_APP_BACKEND}/api/v1/my-storie`, {
         userId: data.userId,
         itemId: itemId,
       })

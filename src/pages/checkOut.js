@@ -18,9 +18,6 @@ import { toPng } from "html-to-image";
 import { connect } from "react-redux";
 import { submitBooking } from "../store/actions/checkOut";
 
-import itemDetails from "../api/detailPageApi.json";
-// import withRouter from "./withRouter";
-
 // Toast js
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -186,7 +183,7 @@ class checkOut extends Component {
 
               <MainContent current={currentStep} data={steps} />
 
-              {currentStep == "bookingInformation" && (
+              {currentStep === "bookingInformation" && (
                 <Controller currentStep={currentStep}>
                   <Button
                     className="btn-booking-back"
@@ -210,7 +207,7 @@ class checkOut extends Component {
                 </Controller>
               )}
 
-              {currentStep == "payments" && (
+              {currentStep === "payments" && (
                 <Controller currentStep={currentStep}>
                   <Button
                     className="btn-booking-back"
@@ -234,7 +231,7 @@ class checkOut extends Component {
                 </Controller>
               )}
 
-              {currentStep == "completed" && (
+              {currentStep === "completed" && (
                 <Controller currentStep={currentStep}>
                   <Button
                     className=" btn-booking-next"

@@ -32,7 +32,7 @@ import AboutPage from "pages/aboutPage";
 
 const PrivateRoute = () => {
   const consumer = useAuth();
-  if (!consumer.token) {
+  if (!(consumer.token && consumer.userId)) {
     consumer.getPathname();
     return <Navigate to={"/login"} />;
   }

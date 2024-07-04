@@ -1,5 +1,4 @@
 import Button from "components/Button";
-import React, { useEffect } from "react";
 import Logo from "../assets/image/Logo_Halan2.png";
 import { useAuth } from "auth/authProvider";
 

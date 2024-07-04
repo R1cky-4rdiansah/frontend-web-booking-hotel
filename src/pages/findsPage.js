@@ -31,11 +31,13 @@ export default class findsPage extends Component {
     document.title = "Halan Halan | Find";
     window.scrollTo(0, 0);
 
+    /* eslint-disable */
     const myCarouselElement = document.querySelector("#MyCarousel");
     new bootstrap.Carousel(myCarouselElement, {
       interval: 5000,
       touch: false,
     });
+    /* eslint-enable */
     this.fetchData();
   }
 
@@ -80,7 +82,6 @@ export default class findsPage extends Component {
   };
 
   fetchData = async () => {
-    
     const harga =
       this.state.filter.harga !== "" ? `&harga=${this.state.filter.harga}` : "";
     const kota =
@@ -92,11 +93,11 @@ export default class findsPage extends Component {
 
     await axios
       .get(
-        `http://localhost:3000/api/v1/find-page?page=${this.state.page}${harga}${kota}${nama}${search}`
+        `${process.env.REACT_APP_BACKEND}/api/v1/find-page?page=${this.state.page}${harga}${kota}${nama}${search}`
       )
       .then((res) => {
         if (this.state.paginate) {
-          if (res.data.data.length == 0) {
+          if (res.data.data.length === 0) {
             this.setState({
               stopPaginate: true,
               isLoading: false,
@@ -179,7 +180,7 @@ export default class findsPage extends Component {
             <div className="carousel-inner h-full">
               <div className="carousel-item active h-full">
                 <img
-                  src="http://localhost:3001/assets/image/Apartemen%201.jpg"
+                  src="/assets/image/Apartemen%201.jpg"
                   className="h-full w-full"
                   alt="..."
                 />
@@ -194,7 +195,7 @@ export default class findsPage extends Component {
               </div>
               <div className="carousel-item h-full">
                 <img
-                  src="http://localhost:3001/assets/image/Apartemen%202.jpg"
+                  src="/assets/image/Apartemen%202.jpg"
                   className="h-full w-full"
                   alt="..."
                 />
@@ -207,7 +208,7 @@ export default class findsPage extends Component {
               </div>
               <div className="carousel-item h-full">
                 <img
-                  src="http://localhost:3001/assets/image/Apartemen%203.jpg"
+                  src="/assets/image/Apartemen%203.jpg"
                   className="h-full w-full"
                   alt="..."
                 />

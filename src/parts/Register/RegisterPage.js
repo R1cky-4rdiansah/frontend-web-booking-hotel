@@ -33,7 +33,7 @@ const RegisterPage = () => {
     // formdata.append("email", data.email);
 
     await axios
-      .post("http://localhost:3000/api/v1/register", data)
+      .post(`${process.env.REACT_APP_BACKEND}/api/v1/register`, data)
       .then(() => {
         toast.success(`Berhasil, Akun telah dibuat silahkan login`, {
           position: "top-right",
