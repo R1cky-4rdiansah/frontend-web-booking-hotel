@@ -107,7 +107,7 @@ export default function Header(props) {
                   </Button>
                 </li>
                 <li className="nav-item">
-                  {Cookies.get("token") ? (
+                  {Cookies.get("token") && Cookies.get("userId") ? (
                     <Button
                       onClick={logOutFunction}
                       type="button"

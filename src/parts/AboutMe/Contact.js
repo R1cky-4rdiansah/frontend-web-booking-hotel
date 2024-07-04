@@ -1,25 +1,21 @@
-import InputText from "components/InputText";
-import TextArea from "components/TextArea";
 import React from "react";
 import gmail from "../../assets/icon/icon_contact/icons8-gmail-96.png";
 import wa from "../../assets/icon/icon_contact/icons8-whatsapp-96.png";
 import location from "../../assets/icon/icon_contact/icons8-location-96.png";
 import github from "../../assets/icon/icon_contact/icons8-github-96.png";
-import Button from "components/Button";
-import { PaperAirplaneIcon } from "@heroicons/react/20/solid";
 
 const data = [
   {
     title: "Gmail",
     src: gmail,
-    link: "mailto:r1cky.ardi4nsah.14@gmail.com",
-    name: "r1cky.ardi4nsah.14@gmail.com",
+    link: "mailto:r1cky.4rdiansah.14@gmail.com",
+    name: "r1cky.4rdiansah.14@gmail.com",
   },
   {
     title: "WhatsApp",
     src: wa,
     link: "https://wa.me/6285866123403",
-    name: "r1cky.ardi4nsah.14@gmail.com",
+    name: "0858-66-1234-03",
   },
   {
     title: "Alamat",
@@ -30,8 +26,8 @@ const data = [
   {
     title: "Github",
     src: github,
-    link: "https://github.com/R1cky-4",
-    name: "R1cky-4",
+    link: "https://github.com/R1cky-4rdiansah",
+    name: "R1cky-4rdiansah",
   },
 ];
 
@@ -112,7 +108,7 @@ const Contact = () => {
         <div className="garis"></div> */}
         <div className="my-contact">
           {data.map((val, i) => (
-            <div key={i} className="flex gap-2 items-center">
+            <div key={i} className={`flex  gap-2 items-center`}>
               <img className="w-12 h-12 object-cover" src={val.src} />
               <div className="flex justify-start flex-col">
                 <span className="text-[10px] text-secondary-gray">
