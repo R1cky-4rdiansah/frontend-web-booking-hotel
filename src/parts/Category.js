@@ -1,5 +1,4 @@
 import React from "react";
-import ImageBanner from "../assets/image/Hero IMage.jpg";
 import Button from "components/Button";
 import ReactOwlCarousel from "react-owl-carousel";
 import RupiahFormat from "utils/RupiahFormat";
@@ -64,6 +63,7 @@ const Category = ({ data }) => {
                       )}
                       <figure className="top-image">
                         <img
+                          alt={`img-${i}`}
                           src={`${process.env.REACT_APP_BACKEND}/${val.imageId[0].imageUrl}`}
                           className="object-cover w-full h-full"
                         />

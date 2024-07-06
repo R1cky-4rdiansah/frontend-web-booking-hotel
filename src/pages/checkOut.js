@@ -86,7 +86,6 @@ class checkOut extends Component {
     formData.append("duration", checkout.duration);
     formData.append("gambar", data.proofPayment);
     formData.append("idItem", checkout._id);
-    formData.append("userId", Cookies.get("userId").split('"')[1]);
 
     this.props
       .submitBooking(formData, Cookies.get("token"))

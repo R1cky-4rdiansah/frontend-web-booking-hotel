@@ -109,7 +109,11 @@ const Contact = () => {
         <div className="my-contact">
           {data.map((val, i) => (
             <div key={i} className={`flex  gap-2 items-center`}>
-              <img className="w-12 h-12 object-cover" src={val.src} />
+              <img
+                alt={`img-${val.title}`}
+                className="w-12 h-12 object-cover"
+                src={val.src}
+              />
               <div className="flex justify-start flex-col">
                 <span className="text-[10px] text-secondary-gray">
                   {val.title}
@@ -118,6 +122,7 @@ const Contact = () => {
                   href={val.link}
                   target="_blank"
                   className="text-xs text-primary-dark cursor-pointer text-decoration-none"
+                  rel="noreferrer"
                 >
                   {val.name}
                 </a>

@@ -22,8 +22,7 @@ export class storiePage extends Component {
         testiId: null,
         foto: null,
         nilai: 5,
-        testimonial: "",
-        userId: Cookies.get("userId").split('"')[1],
+        testimonial: ""
       },
       dataStorie: null,
     };
@@ -37,10 +36,9 @@ export class storiePage extends Component {
 
   fetchPage = async () => {
     const token = Cookies.get("token");
-    const userId = this.state.data.userId;
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
     await axios
-      .post(`${process.env.REACT_APP_BACKEND}/api/v1/storie-page`, { userId })
+      .get(`${process.env.REACT_APP_BACKEND}/api/v1/storie-page`)
       .then((res) => {
         this.setState({
           dataStorie: res.data.data,
@@ -71,13 +69,12 @@ export class storiePage extends Component {
   };
 
   sendTestionial = async () => {
-    const { foto, nilai, testimonial, itemId, userId } = this.state.data;
+    const { foto, nilai, testimonial, itemId } = this.state.data;
     const formData = new FormData();
     formData.append("nilai", nilai);
     formData.append("gambar", foto);
     formData.append("testimonial", testimonial);
     formData.append("itemId", itemId);
-    formData.append("userId", userId);
     formData.append("methode", "post");
     const token = Cookies.get("token");
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
@@ -110,7 +107,7 @@ export class storiePage extends Component {
   };
 
   updateTestominail = async () => {
-    const { foto, nilai, testimonial, itemId, userId, testiId } =
+    const { foto, nilai, testimonial, itemId, testiId } =
       this.state.data;
     const formData = new FormData();
     formData.append("nilai", nilai);
@@ -119,7 +116,6 @@ export class storiePage extends Component {
     }
     formData.append("testimonial", testimonial);
     formData.append("itemId", itemId);
-    formData.append("userId", userId);
     formData.append("testiId", testiId);
     formData.append("methode", "update");
     const token = Cookies.get("token");

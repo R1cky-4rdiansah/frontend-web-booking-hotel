@@ -11,7 +11,6 @@ const AuthProvider = ({ children }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [token, setToken] = useState(Cookies.get("token") || null);
-  const [userId, setUserId] = useState(Cookies.get("userId") || null);
   const [pathname, setPathname] = useState("");
 
   const getPathname = () => {
@@ -25,7 +24,6 @@ const AuthProvider = ({ children }) => {
       .post(`${process.env.REACT_APP_BACKEND}/api/v1/login`, data)
       .then((res) => {
         setToken(res.data.token);
-        setUserId(res.data.userId);
         navigate(pathname);
       })
       .catch((err) => {
@@ -44,16 +42,13 @@ const AuthProvider = ({ children }) => {
 
   const logoutAction = () => {
     setToken(null);
-    setUserId(null);
     Cookies.remove("token");
-    Cookies.remove("userId");
     navigate("/");
   };
 
   return (
     <AuthContect.Provider
       value={{
-        userId,
         token,
         loginAction,
         logoutAction,

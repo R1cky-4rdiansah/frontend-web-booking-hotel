@@ -1,6 +1,5 @@
 import React from "react";
 import RupiahFormat from "utils/RupiahFormat";
-import ImageBanner from "../assets/image/Hero IMage.jpg";
 import Button from "components/Button";
 
 const MostPicked = ({ data, refMostpicked }) => {

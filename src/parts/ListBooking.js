@@ -4,14 +4,14 @@ import InputBintang from "components/InputBintang";
 import InputFile from "components/InputFile";
 import ModalBS from "components/Modal";
 import TextArea from "components/TextArea";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import RupiahFormat from "utils/RupiahFormat";
 import { hari, year } from "utils/formatDateOption";
 import FormatDate from "utils/FormatDate";
 import axios from "axios";
 import star from "../assets/icon/Stars.svg";
 import RupiahFormatK from "utils/RupiahFormatK";
-import NoOrder from "../assets/not_found/No orders.png"
+import NoOrder from "../assets/not_found/No orders.png";
 
 const ListBooking = ({
   propsOnChange,
@@ -28,7 +28,6 @@ const ListBooking = ({
     setHeaderTitle(header);
     await axios
       .post(`${process.env.REACT_APP_BACKEND}/api/v1/my-storie`, {
-        userId: data.userId,
         itemId: itemId,
       })
       .then((res) => {
@@ -102,6 +101,7 @@ const ListBooking = ({
                               : "0"}
                           </span>
                           <img
+                            alt="icon-star"
                             src={star}
                             style={{
                               width: 14,
@@ -218,7 +218,11 @@ const ListBooking = ({
         </>
       ) : (
         <>
-          <img src={NoOrder} className="object-cover w-[500px] h-auto mx-auto" />
+          <img
+            alt="no-orders"
+            src={NoOrder}
+            className="object-cover w-[500px] h-auto mx-auto"
+          />
           <h5 className="text-secondary-gray font-medium text-center">
             Belum ada hotel nih ?? <br />
             Yuk booking hotel dulu...
