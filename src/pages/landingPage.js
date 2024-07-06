@@ -24,18 +24,20 @@ class landingPage extends Component {
     window.scrollTo(0, 0);
     // const { token } = this.context;
 
-    if (!this.props.page.landingPage && !this.props.page.profile) {
+    if (!this.props.page.landingPage) {
       this.props.fetchPage(
         `${process.env.REACT_APP_BACKEND}/api/v1/landing-page`,
         "landingPage"
       );
 
-      if (Cookies.get("token")) {
-        this.props.myProfile(
-          `${process.env.REACT_APP_BACKEND}/api/v1/my-profile`,
-          "profile",
-          Cookies.get("token")
-        );
+      if (!this.props.page.profile) {
+        if (Cookies.get("token")) {
+          this.props.myProfile(
+            `${process.env.REACT_APP_BACKEND}/api/v1/my-profile`,
+            "profile",
+            Cookies.get("token")
+          );
+        }
       }
     }
   }

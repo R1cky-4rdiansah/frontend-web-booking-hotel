@@ -29,11 +29,14 @@ const Hero = () => {
               dipungut biaya wkwkwkwkw.
             </p>
             <Button
-              type="button"
+              type="link"
               isPrimaryBg={true}
-              className="px-5 py-3 shadow-primary rounded-[10px] w-fit ml-auto"
+              className="btn-cv"
+              href="/docs/Ricky Ardiansah CV.pdf"
+              download="ricky-ardiansah-cv"
+              isExternal
             >
-              <span className="font-semibold text-sm text-white flex items-center">
+              <span className="font-semibold text-sm text-white flex justify-center items-center">
                 Download CV{" "}
                 <DocumentTextIcon className="w-4 h-4 ml-2 text-white" />
               </span>

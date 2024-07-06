@@ -41,6 +41,7 @@ export default function Button(props) {
           style={props.style}
           target={props.target === "_blank" ? "_blank" : undefined}
           rel={props.target === "_blank" ? "noopener noreferrer" : undefined}
+          download={props.download ? props.download : undefined}
         >
           {props.children}
         </a>
@@ -73,6 +74,7 @@ export default function Button(props) {
 
 Button.propTypes = {
   type: propTypes.oneOf(["button", "link", "submit"]),
+  download: propTypes.string,
   onClick: propTypes.func,
   target: propTypes.string,
   href: propTypes.string,
