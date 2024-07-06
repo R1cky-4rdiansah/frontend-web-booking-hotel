@@ -5,7 +5,10 @@ import ListBooking from "parts/ListBooking";
 import Cookies from "js-cookie";
 import axios from "axios";
 // import { submitRating } from "store/actions/checkOut";
-// import { connect } from "react-redux";
+
+//redux
+import { connect } from "react-redux";
+import { myProfile } from "store/actions/page";
 
 // Toast js
 import { ToastContainer, toast } from "react-toastify";
@@ -22,7 +25,7 @@ export class storiePage extends Component {
         testiId: null,
         foto: null,
         nilai: 5,
-        testimonial: ""
+        testimonial: "",
       },
       dataStorie: null,
     };
@@ -32,6 +35,16 @@ export class storiePage extends Component {
     document.title = "Halan Halan | Storie";
     window.scrollTo(0, 0);
     this.fetchPage();
+
+    if (!this.props.page.profile) {
+      if (Cookies.get("token")) {
+        this.props.myProfile(
+          `${process.env.REACT_APP_BACKEND}/api/v1/my-profile`,
+          "profile",
+          Cookies.get("token")
+        );
+      }
+    }
   }
 
   fetchPage = async () => {
@@ -107,8 +120,7 @@ export class storiePage extends Component {
   };
 
   updateTestominail = async () => {
-    const { foto, nilai, testimonial, itemId, testiId } =
-      this.state.data;
+    const { foto, nilai, testimonial, itemId, testiId } = this.state.data;
     const formData = new FormData();
     formData.append("nilai", nilai);
     if (typeof foto === "object") {
@@ -176,5 +188,8 @@ export class storiePage extends Component {
   }
 }
 
-export default withRouter(storiePage);
-// export default connect(null, { submitRating })(storiePage);
+const mapStateToProps = (state) => ({
+  page: state.page,
+});
+
+export default connect(mapStateToProps, { myProfile })(storiePage);

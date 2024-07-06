@@ -4,8 +4,13 @@ import Header from "parts/Header";
 import ItemFind from "parts/ItemFind";
 import React, { Component } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
 
-export default class findsPage extends Component {
+//redux
+import { connect } from "react-redux";
+import { myProfile } from "store/actions/page";
+
+class findsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,6 +44,16 @@ export default class findsPage extends Component {
     });
     /* eslint-enable */
     this.fetchData();
+
+    if (!this.props.page.profile) {
+      if (Cookies.get("token")) {
+        this.props.myProfile(
+          `${process.env.REACT_APP_BACKEND}/api/v1/my-profile`,
+          "profile",
+          Cookies.get("token")
+        );
+      }
+    }
   }
 
   onChangeSearch = (e) => {
@@ -295,3 +310,9 @@ export default class findsPage extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  page: state.page,
+});
+
+export default connect(mapStateToProps, { myProfile })(findsPage);

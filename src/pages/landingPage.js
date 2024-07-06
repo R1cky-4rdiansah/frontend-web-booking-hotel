@@ -6,10 +6,11 @@ import Category from "parts/Category";
 import Testimonial from "parts/Testimonial";
 import Footer from "parts/Footer";
 import LoadingPage from "components/loadingPage";
+import Cookies from "js-cookie";
 
 //redux
 import { connect } from "react-redux";
-import { fetchPage } from "store/actions/page";
+import { fetchPage, myProfile } from "store/actions/page";
 import { AuthContect } from "auth/authProvider";
 class landingPage extends Component {
   static = AuthContect;
@@ -23,11 +24,19 @@ class landingPage extends Component {
     window.scrollTo(0, 0);
     // const { token } = this.context;
 
-    if (!this.props.page.landingPage) {
+    if (!this.props.page.landingPage && !this.props.page.profile) {
       this.props.fetchPage(
         `${process.env.REACT_APP_BACKEND}/api/v1/landing-page`,
         "landingPage"
       );
+
+      if (Cookies.get("token")) {
+        this.props.myProfile(
+          `${process.env.REACT_APP_BACKEND}/api/v1/my-profile`,
+          "profile",
+          Cookies.get("token")
+        );
+      }
     }
   }
 
@@ -67,4 +76,4 @@ const mapStateToProps = (state) => ({
 });
 
 // export default withRouter(landingPage);
-export default connect(mapStateToProps, { fetchPage })(landingPage);
+export default connect(mapStateToProps, { fetchPage, myProfile })(landingPage);

@@ -54,8 +54,8 @@ const Category = ({ data }) => {
                 </div>
               ) : (
                 val.itemId.map((val, i) => (
-                  <Button type="link" href={`/details/${val._id}`}>
-                    <div key={i} className="card mb-[2px]">
+                  <Button key={i} type="link" href={`/details/${val._id}`}>
+                    <div className="card mb-[2px]">
                       {val.isPopular && (
                         <div className="tag">
                           <span className="text-tag">Populer</span>

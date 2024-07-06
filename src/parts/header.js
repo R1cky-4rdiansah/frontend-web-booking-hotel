@@ -5,7 +5,6 @@ import { useAuth } from "auth/authProvider";
 //Swal fire
 import Swal from "sweetalert2";
 import "sweetalert2/src/sweetalert2.scss";
-import Cookies from "js-cookie";
 
 export default function Header(props) {
   const ConsumeContext = useAuth();
@@ -24,6 +23,7 @@ export default function Header(props) {
       cancelButtonText: "Tidak",
     }).then((result) => {
       if (result.isConfirmed) {
+        props.page.profile = null;
         ConsumeContext.logoutAction();
       }
     });
@@ -106,22 +106,36 @@ export default function Header(props) {
                     About
                   </Button>
                 </li>
-                <li className="nav-item">
-                  {Cookies.get("token") ? (
-                    <Button
-                      onClick={logOutFunction}
-                      type="button"
-                      className={`nav-link`}
-                      style={{
-                        background: "#d33",
-                        borderRadius: "10px",
-                        color: "white",
-                        padding: "10px 10px",
-                      }}
+                {props.page.profile ? (
+                  <li className="nav-item dropdown">
+                    <a
+                      className="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
                     >
-                      Logout
-                    </Button>
-                  ) : (
+                      {props.page.profile.data.firstName +
+                        " " +
+                        props.page.profile.data.lastName}
+                    </a>
+                    <ul
+                      className="dropdown-menu"
+                      style={{ background: "#d33" }}
+                    >
+                      <li>
+                        <button
+                          className="dropdown-item text-white"
+                          onClick={logOutFunction}
+                          href="#"
+                        >
+                          Logout
+                        </button>
+                      </li>
+                    </ul>
+                  </li>
+                ) : (
+                  <li className="nav-item">
                     <Button
                       type="link"
                       className={`nav-link w-fit`}
@@ -135,8 +149,8 @@ export default function Header(props) {
                     >
                       Login / Register
                     </Button>
-                  )}
-                </li>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
