@@ -44,32 +44,34 @@ class landingPage extends Component {
 
   render() {
     const { page } = this.props;
+    console.log(this.props);
 
-    if (!page.hasOwnProperty("landingPage"))
+    if (!page.hasOwnProperty("landingPage")) {
       return (
         <>
           <LoadingPage />
         </>
       );
-
-    return (
-      <>
-        <Header {...this.props}></Header>
-        <div className="frame-section">
-          <Hero
-            refMostpicked={this.refMostpicked}
-            data={page.landingPage.hero}
-          />
-          <MostPicked
-            refMostpicked={this.refMostpicked}
-            data={page.landingPage.mostPicked}
-          />
-          <Category data={page.landingPage.category} />
-          <Testimonial data={page.landingPage.testimonial} />
-          <Footer />
-        </div>
-      </>
-    );
+    } else {
+      return (
+        <>
+          <Header {...this.props}></Header>
+          <div className="frame-section">
+            <Hero
+              refMostpicked={this.refMostpicked}
+              data={page.landingPage.hero}
+            />
+            <MostPicked
+              refMostpicked={this.refMostpicked}
+              data={page.landingPage.mostPicked}
+            />
+            <Category data={page.landingPage.category} />
+            <Testimonial data={page.landingPage.testimonial} />
+            <Footer />
+          </div>
+        </>
+      );
+    }
   }
 }
 

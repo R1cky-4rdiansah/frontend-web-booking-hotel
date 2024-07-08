@@ -19,6 +19,14 @@ export const submitBooking = (payload, token) => () => {
   );
 };
 
+export const updateUser = (payload, token) => () => {
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  return axios.post(
+    `${process.env.REACT_APP_BACKEND}/api/v1/update-profile`,
+    payload
+  );
+};
+
 export const detailOrder = (token, invoice) => () => {
   if (token) {
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;

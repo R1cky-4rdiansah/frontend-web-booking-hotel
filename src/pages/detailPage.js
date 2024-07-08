@@ -40,23 +40,24 @@ class detailPage extends Component {
           <LoadingPage />
         </>
       );
+    } else {
+      return (
+        <>
+          <Header {...this.props} />
+          <div className="frame-section">
+            <ImageDetails
+              data={page.detailPage}
+              startBooking={this.props.checkOutBooking}
+            />
+            <Doing data={page.detailPage.doing} />
+            {page.detailPage.testimonial && (
+              <Testimonial data={page.detailPage.testimonial} />
+            )}
+            <Footer />
+          </div>
+        </>
+      );
     }
-    return (
-      <>
-        <Header {...this.props} />
-        <div className="frame-section">
-          <ImageDetails
-            data={page.detailPage}
-            startBooking={this.props.checkOutBooking}
-          />
-          <Doing data={page.detailPage.doing} />
-          {page.detailPage.testimonial && (
-            <Testimonial data={page.detailPage.testimonial} />
-          )}
-          <Footer />
-        </div>
-      </>
-    );
   }
 }
 
