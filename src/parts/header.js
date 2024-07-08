@@ -5,7 +5,7 @@ import { useState } from "react";
 import ModalBS from "components/Modal";
 import { UserCircleIcon } from "@heroicons/react/20/solid";
 import { updateUser } from "../store/actions/checkOut";
-import { myProfile } from "store/actions/page";
+import { myProfile, deleteObject } from "store/actions/page";
 import Cookies from "js-cookie";
 
 //Swal fire
@@ -95,7 +95,7 @@ function Header(props) {
       cancelButtonText: "Tidak",
     }).then((result) => {
       if (result.isConfirmed) {
-        props.page.profile = null;
+        props.deleteObject("profile");
         ConsumeContext.logoutAction();
       }
     });
@@ -292,4 +292,4 @@ function Header(props) {
   );
 }
 
-export default connect(null, { updateUser, myProfile })(Header);
+export default connect(null, { updateUser, myProfile, deleteObject })(Header);

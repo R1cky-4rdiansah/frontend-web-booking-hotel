@@ -1,4 +1,4 @@
-import { FETCH_PAGE } from "store/types";
+import { FETCH_PAGE, DELETE_OBJECT } from "store/types";
 
 const initialState = {};
 
@@ -8,6 +8,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         ...action.payload,
+      };
+    case DELETE_OBJECT:
+      delete state[action.payload];
+      return {
+        ...state,
       };
 
     default:

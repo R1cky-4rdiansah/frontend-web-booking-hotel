@@ -1,4 +1,4 @@
-import { FETCH_PAGE } from "store/types";
+import { FETCH_PAGE, DELETE_OBJECT } from "store/types";
 import axios from "axios";
 
 export const fetchPage = (url, page, token) => (dispatch) => {
@@ -26,5 +26,12 @@ export const myProfile = (url, page, token) => (dispatch) => {
         [page]: resp.data,
       },
     });
+  });
+};
+
+export const deleteObject = (name) => (dispatch) => {
+  dispatch({
+    type: DELETE_OBJECT,
+    payload: name,
   });
 };

@@ -29,16 +29,14 @@ class landingPage extends Component {
         `${process.env.REACT_APP_BACKEND}/api/v1/landing-page`,
         "landingPage"
       );
+    }
 
-      if (!this.props.page.profile) {
-        if (Cookies.get("token")) {
-          this.props.myProfile(
-            `${process.env.REACT_APP_BACKEND}/api/v1/my-profile`,
-            "profile",
-            Cookies.get("token")
-          );
-        }
-      }
+    if (!this.props.page.profile && Cookies.get("token")) {
+      this.props.myProfile(
+        `${process.env.REACT_APP_BACKEND}/api/v1/my-profile`,
+        "profile",
+        Cookies.get("token")
+      );
     }
   }
 

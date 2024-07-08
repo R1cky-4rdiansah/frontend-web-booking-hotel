@@ -1,2 +1,3 @@
 export const CHECKOUT_BOOKING = "CHECKOUT_BOOKING";
 export const FETCH_PAGE = "FETCH_PAGE";
+export const DELETE_OBJECT = "DELETE_OBJECT";
