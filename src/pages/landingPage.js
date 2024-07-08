@@ -44,7 +44,6 @@ class landingPage extends Component {
 
   render() {
     const { page } = this.props;
-    console.log(this.props);
 
     if (!page.hasOwnProperty("landingPage")) {
       return (
