@@ -170,7 +170,7 @@ class checkOut extends Component {
     };
     return (
       <>
-        <Header isPayment />
+        <Header {...this.props} isPayment />
 
         <Stepper steps={steps}>
           {(prevStep, nextStep, currentStep, steps) => (
