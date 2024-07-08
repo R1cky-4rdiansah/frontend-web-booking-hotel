@@ -103,7 +103,7 @@ export class storiePage extends Component {
           showConfirmButton: false,
           timer: 2000,
         }).then(() => {
-          this.props.navigate(0);
+          this.fetchPage();
         })
       )
       .catch((err) =>
@@ -144,7 +144,7 @@ export class storiePage extends Component {
           showConfirmButton: false,
           timer: 2000,
         }).then(() => {
-          this.props.navigate(0);
+          this.fetchPage();
         })
       )
       .catch((err) =>
