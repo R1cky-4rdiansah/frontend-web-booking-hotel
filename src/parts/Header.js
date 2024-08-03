@@ -22,13 +22,13 @@ function Header(props) {
   const ConsumeContext = useAuth();
   const [show, setShowModal] = useState(false);
   const [allValues, setAllValues] = useState({
-    name: props.page.profile
+    name: props.page.profile.data
       ? props.page.profile.data.firstName +
         " " +
         props.page.profile.data.lastName
       : "",
-    email: props.page.profile ? props.page.profile.data.email : "",
-    phone: props.page.profile ? props.page.profile.data.handphone : "",
+    email: props.page.profile.data ? props.page.profile.data.email : "",
+    phone: props.page.profile.data ? props.page.profile.data.handphone : "",
   });
   const [isLoadingBtn, setIsloadingBtn] = useState(false);
   const getActiveClassLink = (path) => {
@@ -179,7 +179,7 @@ function Header(props) {
                     About
                   </Button>
                 </li>
-                {props.page.profile ? (
+                {props.page.profile.data ? (
                   <li className="nav-item dropdown">
                     <a
                       className="nav-link dropdown-toggle"
@@ -234,7 +234,7 @@ function Header(props) {
           </div>
         </nav>
       </div>
-      {show && props.page.profile && (
+      {show && props.page.profile.data && (
         <ModalBS setShowModal={setShowModal} id="modal" show={show} size="sm">
           <UserCircleIcon className="w-50 h-50 mx-auto" />
           <div className="flex flex-col gap-1">
