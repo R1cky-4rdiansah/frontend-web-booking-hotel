@@ -33,6 +33,7 @@
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
     "sass": "^1.69.5",
+    "socket.io-client": "^4.7.5",
     "styled-components": "^6.1.8",
     "sweetalert2": "^11.10.6",
     "swiper": "^11.0.6",

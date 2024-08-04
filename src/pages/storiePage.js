@@ -37,7 +37,7 @@ export class storiePage extends Component {
     window.scrollTo(0, 0);
     this.fetchPage();
 
-    if (!this.props.page.profile) {
+    if (!this.props.page.hasOwnProperty("profile")) {
       if (Cookies.get("token")) {
         this.props.myProfile(
           `${process.env.REACT_APP_BACKEND}/api/v1/my-profile`,
@@ -163,7 +163,7 @@ export class storiePage extends Component {
 
   render() {
     const { data, dataStorie } = this.state;
-    if (dataStorie && this.props.page.profile) {
+    if (dataStorie && this.props.page.hasOwnProperty("profile")) {
       return (
         <>
           <Header {...this.props}></Header>

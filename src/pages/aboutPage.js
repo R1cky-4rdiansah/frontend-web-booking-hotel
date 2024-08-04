@@ -17,7 +17,7 @@ class aboutPage extends Component {
     document.title = "Halan Halan | About Me";
     window.scrollTo(0, 0);
 
-    if (!this.props.page.profile) {
+    if (!this.props.page.hasOwnProperty("profile")) {
       if (Cookies.get("token")) {
         this.props.myProfile(
           `${process.env.REACT_APP_BACKEND}/api/v1/my-profile`,

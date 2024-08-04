@@ -40,7 +40,7 @@ class findsPage extends Component {
     /* eslint-enable */
     this.fetchData();
 
-    if (!this.props.page.profile) {
+    if (!this.props.page.hasOwnProperty("profile")) {
       if (Cookies.get("token")) {
         this.props.myProfile(
           `${process.env.REACT_APP_BACKEND}/api/v1/my-profile`,
@@ -160,7 +160,7 @@ class findsPage extends Component {
   render() {
     const { nama, harga, kota } = this.state.filter;
     const { search, data, isLoading, isError, city } = this.state;
-    if (this.props.page.profile) {
+    if (this.props.page.hasOwnProperty("profile")) {
       return (
         <>
           <Header {...this.props}></Header>

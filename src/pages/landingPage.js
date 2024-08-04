@@ -31,7 +31,7 @@ class landingPage extends Component {
       );
     }
 
-    if (!this.props.page.profile && Cookies.get("token")) {
+    if (!this.props.page.hasOwnProperty("profile") && Cookies.get("token")) {
       this.props.myProfile(
         `${process.env.REACT_APP_BACKEND}/api/v1/my-profile`,
         "profile",

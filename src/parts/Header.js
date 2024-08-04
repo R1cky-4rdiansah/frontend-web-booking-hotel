@@ -1,7 +1,7 @@
 import Button from "components/Button";
 import Logo from "../assets/image/Logo_Halan2.png";
 import { useAuth } from "auth/authProvider";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModalBS from "components/Modal";
 import { UserCircleIcon } from "@heroicons/react/20/solid";
 import { updateUser } from "../store/actions/checkOut";
@@ -18,17 +18,25 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { connect } from "react-redux";
 
+import io from "socket.io-client";
+
+const socket = io("http://localhost:3000");
+
 function Header(props) {
   const ConsumeContext = useAuth();
   const [show, setShowModal] = useState(false);
   const [allValues, setAllValues] = useState({
-    name: props.page.profile.data
+    name: props.page.hasOwnProperty("profile")
       ? props.page.profile.data.firstName +
         " " +
         props.page.profile.data.lastName
       : "",
-    email: props.page.profile.data ? props.page.profile.data.email : "",
-    phone: props.page.profile.data ? props.page.profile.data.handphone : "",
+    email: props.page.hasOwnProperty("profile")
+      ? props.page.profile.data.email
+      : "",
+    phone: props.page.hasOwnProperty("profile")
+      ? props.page.profile.data.handphone
+      : "",
   });
   const [isLoadingBtn, setIsloadingBtn] = useState(false);
   const getActiveClassLink = (path) => {
@@ -100,6 +108,16 @@ function Header(props) {
       }
     });
   };
+
+  useEffect(() => {
+    socket.on("connect", () => {
+      console.log("Connected to server");
+    });
+
+    return () => {
+      socket.off("connect");
+    };
+  }, []);
 
   if (props.isPayment) {
     return (
@@ -179,7 +197,7 @@ function Header(props) {
                     About
                   </Button>
                 </li>
-                {props.page.profile.data ? (
+                {props.page.hasOwnProperty("profile") ? (
                   <li className="nav-item dropdown">
                     <a
                       className="nav-link dropdown-toggle"
@@ -234,7 +252,7 @@ function Header(props) {
           </div>
         </nav>
       </div>
-      {show && props.page.profile.data && (
+      {show && props.page.hasOwnProperty("profile") && (
         <ModalBS setShowModal={setShowModal} id="modal" show={show} size="sm">
           <UserCircleIcon className="w-50 h-50 mx-auto" />
           <div className="flex flex-col gap-1">
